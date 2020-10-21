@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div class="container">
-		<%@ include file="../home.jsp" %>
+		<%@ include file="../home_header.jsp" %>
 		<section class="col-3 float-left bg-light font-weight-bold nav-link mb-5 mt-3" style="height: 529px">
 					<ul>
 					<div class="label mt-2 mb-2 list-group-item list-group-item-action"><a href="http://127.0.0.1:8080/ict32/notice"><span class="notice">소개 및 인사말</span></a></div>
