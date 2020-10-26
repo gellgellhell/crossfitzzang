@@ -10,6 +10,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 <div class = "container">
@@ -41,41 +42,41 @@
   <!--  로그인 회원가입 끝 -->
 	<!-- nav start -->
 		<nav class="navbar navbar-expand-sm bg-secondary rounded mt-1 mb-1">
-			<ul class="navbar-nav">
+			<div class="navbar-nav">
 					<div class="w3-dropdown-hover">
   						  <button class="w3-button bg-secondary text-white font-weight-bold">소개</button>
   							  <div class="w3-dropdown-content w3-bar-block w3-border">
-  								      <a href="#" class="w3-bar-item w3-button">크로스핏이란</a>
-  							          <a href="#" class="w3-bar-item w3-button">소개</a>
-    								  <a href="#" class="w3-bar-item w3-button">인삿말</a>
+  								      <a href="${root}/introduce/introduce1" class="w3-bar-item w3-button">크로스핏이란</a>
+  							          <a href="${root}/introduce/introduce1" class="w3-bar-item w3-button">소개</a>
+    								  <a href="${root}/introduce/map" class="w3-bar-item w3-button">오시는 길</a>
                               </div>
                       </div>
 					<div class="w3-dropdown-hover">
   						  <button class="w3-button bg-secondary text-white font-weight-bold">체육관 찾기</button>
   							  <div class="w3-dropdown-content w3-bar-block w3-border">
-  								      <a href="#" class="w3-bar-item w3-button">내 주변 체육관</a>
-  							          <a href="#" class="w3-bar-item w3-button">추천 체육관</a>
-    								  <a href="#" class="w3-bar-item w3-button">실시간 맞춤 일정</a>
-    								  <a href="#" class="w3-bar-item w3-button">오늘의 추천 일정</a>
+  								      <a href="${root}/gym/neargym" class="w3-bar-item w3-button">내 주변 체육관</a>
+  							          <a href="${root}/gym/recommend_gym" class="w3-bar-item w3-button">추천 체육관</a>
+    								  <a href="${root}/gym/realtime_schedule" class="w3-bar-item w3-button">실시간 맞춤 일정</a>
+    								  <a href="${root}/gym/recommend_schedule" class="w3-bar-item w3-button">오늘의 추천 일정</a>
                               </div>
                       </div>
 					<div class="w3-dropdown-hover">
   						  <button class="w3-button bg-secondary text-white font-weight-bold">게시판</button>
   							  <div class="w3-dropdown-content w3-bar-block w3-border">
-  								      <a href="#" class="w3-bar-item w3-button">공지 게시판</a>
-  							          <a href="#" class="w3-bar-item w3-button">이벤트 게시판</a>
-    								  <a href="#" class="w3-bar-item w3-button">회원 게시판</a>
+  								      <a href="${root}/list/notice" class="w3-bar-item w3-button">공지 게시판</a>
+  							          <a href="${root}/list/event" class="w3-bar-item w3-button">이벤트 게시판</a>
+    								  <a href="${root}/list/member" class="w3-bar-item w3-button">회원 게시판</a>
                               </div>
                       </div>
 					<div class="w3-dropdown-hover">
   						  <button class="w3-button bg-secondary text-white font-weight-bold">INFO</button>
   							  <div class="w3-dropdown-content w3-bar-block w3-border">
-  								      <a href="#" class="w3-bar-item w3-button">1대1 문의사항</a>
-  							          <a href="#" class="w3-bar-item w3-button">123</a>
-    								  <a href="#" class="w3-bar-item w3-button">456</a>
+  								      <a href="${root}/info/man2man" class = "w3-bar-item w3-button">1대1 문의사항</a>
+  							          <a href="${root}/info/qna" class = "w3-bar-item w3-button"> 질문 및 건의사항 </a>
+    								  <a href="${root}/info/mypage" class = "w3-bar-item w3-button">MYPAGE</a>
                               </div>
                       </div>
-					</ul>
+					</div>
 		</nav>
 		
 		<!-- nav end -->

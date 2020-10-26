@@ -77,7 +77,7 @@
 
   <div class="w3-row">
     <div class="w3-col s4">
-      <img src = "${root}/resources/csf1.jpg" style="width:100%">
+      <img src = "${root}/resource/csf1.jpg" style="width:100%">
     </div>
     <div class="w3-col s4">
       <img src = "${root}/resources/csf1.jpg" style="width:100%">
@@ -86,9 +86,7 @@
       <img src = "${root}/resources/csf1.jpg" style="width:100%">
     </div>
   </div>
-
-
-		<%@ include file="./home_footer.jsp" %>
+	<%@ include file="./home_footer.jsp" %>
   	</div>	
 	
 </body>

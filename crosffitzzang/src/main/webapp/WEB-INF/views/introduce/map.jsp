@@ -13,25 +13,41 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=c7f356da0bd7793c466a860c8e71c697&libraries=services"></script>
-</head>
+<style>
+.ibox {
+dispaly : flex;
+align-content : center;
+width : 280px;
+height : 600px; 
+}
+</style>
 
+</head>
 <body>
+<%@ include file="../home_header.jsp" %>
 	<div class="container">
-		<%@ include file="../home_header.jsp" %>
-		<section class="col-3 float-left bg-light font-weight-bold nav-link mb-5 mt-3" style="height: 529px">
-					<ul>
-					<div class="label mt-2 mb-2 list-group-item list-group-item-action"><a href="http://127.0.0.1:8080/ict32/notice"><span class="notice">소개 및 인사말</span></a></div>
-					<div class="label list-group-item list-group-item-action"><a href="{root}/map"><span class="come">오시는 길</span></a></div>
-					</ul>
+		<section class="col-3 float-left bg-light font-weight-bold nav-link mb-5 mt-3" style = "height: 600px;">
+			<ul id = "ibox">
+				<li class="label mt-2 mb-2 list-group-item list-group-item-action">
+					<a href="${root}/introduce/introduce1"><span class="notice">크로스핏이란</span></a>
+				</li>
+
+				<li class="label mt-2 mb-2 list-group-item list-group-item-action">
+					<a href="${root}/introduce/introduce1"><span class="notice">소개</span></a>
+				</li>
 				
-			</section>
-		<h1 class="text-muted text-center mt-3 mb-3">
-			운동에 미치다
-		</h1>
-		<div id="map" style="width:75%;height:465px;"></div>
+				<li class="label list-group-item list-group-item-action">
+					<a href="${root}/introduce/map"><span class="come">오시는 길</span></a>
+				</li>
+			</ul>
+		</section>
+		
+		<h1 class="text-muted text-center mt-3 mb-3"> 운동에 미치다 </h1>
+		<div id = "map" style = "width : 75%; height : 465px;"></div>
 	</div>
-	<script type="text/javascript">
-	//1단계 : 지도 가져오기
+		
+<script type="text/javascript">
+//1단계 : 지도 가져오기
 	var container = document.getElementById('map');
 	var options = {
 		center: new kakao.maps.LatLng(33.450701, 126.570667),
@@ -62,16 +78,18 @@
 	    }
 	});
 	</script>
-  <div class=clear></div>  
-  	<div style="color:#9A12B3;"> <b><img src = "${root}/resources/notice/notice_location.jpg" width = "30"> 회사주소 : 
-						  &nbsp;서울시 마포구 양화로 127, 첨단빌딩 7층, 지하철 2호선 홍대역 1번출구 </b>
-						  
-						  
-						  </div>
-			<div class=clear5></DIV>
-   
-     <div  style="color:#9A12B3;"><b><img src = "${root}/resources/notice/notice_call.jpg" width = "30">  대표전화 : 02-1234-5678</b></div>
 	
-			<div class=clear10></div>
+	<div class = "clearfix"> 
+		<div style = "color: black;"><b><img src = "${root}/resources/notice/notice_location.jpg">
+			회사주소 : &nbsp;서울시 마포구 양화로 127, 첨단빌딩 7층, 지하철 2호선 홍대역 1번출구 </b>
+		</div>
+		<div  style = "color: black;" class = "mt-2"><b><img src = "${root}/resources/notice/notice_call.jpg">
+			대표전화 : 02-1234-5678</b>
+		</div>
+	</div>
+	
+			<%@ include file="../home_footer.jsp" %>
+			
+			
 </body>
 </html>
