@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="root" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +21,7 @@
 		<section class="col-3 float-left bg-light font-weight-bold nav-link mb-5 mt-3" style="height: 529px">
 					<ul>
 					<div class="label mt-2 mb-2 list-group-item list-group-item-action"><a href="http://127.0.0.1:8080/ict32/notice"><span class="notice">소개 및 인사말</span></a></div>
-					<div class="label list-group-item list-group-item-action"><a href="http://127.0.0.1:8080/ict32/map"><span class="come">오시는 길</span></a></div>
+					<div class="label list-group-item list-group-item-action"><a href="{root}/map"><span class="come">오시는 길</span></a></div>
 					</ul>
 				
 			</section>
@@ -61,14 +63,14 @@
 	});
 	</script>
   <div class=clear></div>  
-  	<div style="color:#9A12B3;"> <b><img src="images/img_location.jpg" width="30"> 회사주소 : 
+  	<div style="color:#9A12B3;"> <b><img src = "${root}/resources/notice/notice_location.jpg" width = "30"> 회사주소 : 
 						  &nbsp;서울시 마포구 양화로 127, 첨단빌딩 7층, 지하철 2호선 홍대역 1번출구 </b>
 						  
 						  
 						  </div>
 			<div class=clear5></DIV>
    
-     <div  style="color:#9A12B3;"><b><img src="images/img_tel.jpg" width="30">  대표전화 : 02-1234-5678</b></div>
+     <div  style="color:#9A12B3;"><b><img src = "${root}/resources/notice/notice_call.jpg" width = "30">  대표전화 : 02-1234-5678</b></div>
 	
 			<div class=clear10></div>
 </body>
