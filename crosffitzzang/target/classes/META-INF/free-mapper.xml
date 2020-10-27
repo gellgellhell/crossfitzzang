@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="FreeMapper">
+
+	<select id="listAll"
+			resultType="kr.co.ict3.brd.free.FreeBoardDTO">
+		SELECT bno, title, writer, view_cnt, write_date
+		FROM free_board
+	</select>
+
+	<insert id="write"
+			parameterType="kr.co.ict3.brd.free.FreeBoardDTO">
+		insert into free_board
+						(title, writer, pwd, cnts, write_date)
+		values (#{title}, #{writer}, #{pwd}, #{cnts}, now())
+	</insert>
+
+	<select id="detail"
+			parameterType="java.lang.String"
+			resultType="kr.co.ict3.brd.free.FreeBoardDTO">
+		SELECT bno, title, writer, cnts
+			, view_cnt, like_cnt, unlike_cnt, write_date
+		FROM free_board
+		WHERE bno = #{bno}
+	</select>
+
+	<update id="likeCnt"
+			parameterType="java.util.HashMap">
+		UPDATE free_board
+		<choose>
+			<when test="heart == 'heart'">
+				SET like_cnt = like_cnt + 1
+			</when>
+			<otherwise>
+				SET unlike_cnt = unlike_cnt + 1
+			</otherwise>
+		</choose>
+		WHERE bno = #{bno}
+	</update>
+
+	<delete id="delete"
+			parameterType="kr.co.ict3.brd.free.FreeBoardDTO">
+		DELETE FROM free_board
+		WHERE bno = #{bno}
+		AND pwd = #{pwd}
+	</delete>
+
+	<select id="chkPwd"
+			parameterType="kr.co.ict3.brd.free.FreeBoardDTO"
+			resultType="int">
+		SELECT COUNT(pwd) cnt
+		FROM free_board
+		WHERE bno = #{bno}
+		AND pwd = #{pwd}
+	</select>
+
+	<update id="update"
+			parameterType="kr.co.ict3.brd.free.FreeBoardDTO">
+		UPDATE free_board
+		SET title = #{title}
+			, writer = #{writer}
+			, cnts = #{cnts}
+		WHERE bno = #{bno}
+		AND pwd = #{pwd}
+	</update>
+
+	<insert id="insHanjul"
+			parameterType="kr.co.ict3.brd.free.ReplyDTO">
+		insert into free_board_reply
+				(writer, cnts, pwd, write_date)
+		values (#{bno}, #{writer}, #{cnts}, #{pwd}, now())	
+	</insert>
+
+	<select id="viewHanjul"
+			parameterType="java.lang.String"
+			resultType="kr.co.ict3.brd.free.ReplyDTO">
+		select rno, bno, writer, cnts, write_date
+		from free_board_reply
+		where bno = #{bno}
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
