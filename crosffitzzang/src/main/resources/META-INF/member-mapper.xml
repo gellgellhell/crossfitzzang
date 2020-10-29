@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="memberMapper">
+
+	<update id="updateLikeCnt"
+			parameterType="java.lang.String">
+		update board
+		set like_cnt = like_cnt + 1
+		where bno = #{bno}
+	</update>
+
+	<update id="update"
+			parameterType="kr.co.ict3.brd.mbr.MemberBoardDTO">
+		update board
+		set title = #{title}
+			, cnts = #{cnts}
+		where bno = #{bno}
+	</update>
+
+	<update id="updateViewCnt"
+			parameterType="java.lang.String">
+		update board
+		set view_cnt = view_cnt + 1
+		where bno = #{bno}
+	</update>
+
+	<delete id="delete"
+			parameterType="java.lang.String">
+		delete from board
+		where bno = #{bno}
+	</delete>
+
+	<select id="detail"
+			parameterType="java.lang.String"
+			resultType="kr.co.ict3.brd.mbr.MemberBoardDTO">
+		select board.bno, board.title
+				, board.mno, mbr.id
+				, board.cnts, board.view_cnt
+				, board.like_cnt, board.write_date
+		from board, mbr
+		where board.bno = #{bno}
+		and board.mno = mbr.mno
+	</select>
+
+	<insert id="write"
+			parameterType="kr.co.ict3.brd.mbr.MemberBoardDTO">
+		insert into board (title, mno, cnts, write_date)
+		values (#{title}
+			, (select mno from mbr where id = #{id})
+			, #{cnts}, now())
+	</insert>
+
+	<select id="list"
+			resultType="kr.co.ict3.brd.mbr.MemberBoardDTO">
+		select board.bno, board.title
+				, board.mno, mbr.id
+				, board.view_cnt, board.write_date
+		from board, mbr
+		where board.mno = mbr.mno
+		order by bno desc
+	</select>
+
+</mapper>

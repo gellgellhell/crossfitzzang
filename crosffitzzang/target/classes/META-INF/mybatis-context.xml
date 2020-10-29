@@ -6,8 +6,8 @@
 <configuration>
 
  	<mappers>
-		<mapper resource="META-INF/free-mapper.xml" />
-		<mapper resource="META-INF/board-mapper.xml" />
+		<mapper resource="META-INF/event-mapper.xml" />
+		<mapper resource="META-INF/member-mapper.xml" />
 	</mappers> 
 
 </configuration>

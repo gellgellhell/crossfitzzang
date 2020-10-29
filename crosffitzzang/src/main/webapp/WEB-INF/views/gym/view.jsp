@@ -7,22 +7,24 @@
 <head>
 <meta charset="UTF-8">
 <title>체육관 클릭 시 페이지</title>
-<meta name="viewport" content="width=1080px,maximum-scale=2.0,minimum-scale=0.4,user-scalable=yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
 </head>
 
 <body>
-	<div class="container">
-<%@ include file="../home_header.jsp" %>	
+	<div class = "container">
+<%@ include file = "../home_header.jsp" %>	
 
-<div id="demo" class="carousel slide float-left w-50 mb-2" data-ride="carousel">
+<div id = "demo" class = "carousel slide float-left w-50 mb-2" data-ride = "carousel">
 
 	<!-- 슬라이드 쇼 인디케이터 시작 -->
 	<ul class = "carousel-indicators">
-		<li data-target = "#demo" data-slide-to = "0" class="active"></li>
+		<li data-target = "#demo" data-slide-to = "0" class = "active"></li>
 		<li data-target = "#demo" data-slide-to = "1"></li>
 		<li data-target = "#demo" data-slide-to = "2"></li>
 	</ul>
@@ -33,7 +35,7 @@
 		<div class = "carousel-item active">
 			<img src = "${root}/resources/images/gym_newgen_01.jpg" alt = "main1" width = "500" height = "500">
 		</div>
-    
+    	
 		<div class = "carousel-item active">
 			<img src = "${root}/resources/images/gym_newgen_02.jpg" alt = "main21" width = "500" height = "500">
 		</div>
@@ -45,11 +47,11 @@
 	<!-- 슬라이드쇼 끝 -->
 
   <!-- 좌우 변경 -->
-	<a class="carousel-control-prev" href="#demo" data-slide="prev">
-		<span class="carousel-control-prev-icon"></span>
+	<a class = "carousel-control-prev" href = "#demo" data-slide = "prev">
+		<span class = "carousel-control-prev-icon"></span>
 	</a>
-	<a class="carousel-control-next" href="#demo" data-slide="next">
-		<span class="carousel-control-next-icon"></span>
+	<a class = "carousel-control-next" href = "#demo" data-slide = "next">
+		<span class = "carousel-control-next-icon"></span>
 	</a>
 </div>
 
@@ -66,13 +68,15 @@
 	
 <!-- 장바구니 구매하기 끝-->
 	<div style="text-align: center" class="mb-3">
-		<button type="button" class="btn btn-primary" id = "btn_bag" href = "{root}purchase/bag">장바구니</button>
-		<button type="button" class="btn btn-primary" id = "btn_purchase" href = "{root}/purchase/charge">구매하기</button>
+		<button type = "button" class="btn btn-primary" onclick="location.href = '${root}/purchase/bag';">장바구니</button>
+		<button type = "button" class="btn btn-primary" onclick="location.href = '${root}/purchase/charge';">구매하기</button>
 	</div>
 <!-- 장바구니 구매하기 끝-->
 		
 
 	</div>
 	<%@ include file="../home_footer.jsp" %>
+
+</script>
 </body>
 </html>

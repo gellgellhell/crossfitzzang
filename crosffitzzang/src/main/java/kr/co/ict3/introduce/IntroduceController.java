@@ -8,10 +8,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = "/introduce")
 public class IntroduceController {
 	
-	@RequestMapping(value = "/introduce1", method = RequestMethod.GET)
+	@RequestMapping(value = "/crossfit", method = RequestMethod.GET)
+	public String crossfit() {
+		return "introduce/crossfit";
+	}// crossfit
+	
+	@RequestMapping(value = "/introduce", method = RequestMethod.GET)
 	public String introduce() {
-		return "introduce/introduce1";
-	}// notice
+		return "introduce/introduce";
+	}// introduce
 
 	@RequestMapping(value = "/map", method = RequestMethod.GET)
 	public String map() {

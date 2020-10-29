@@ -33,7 +33,7 @@
 					<div class="form-inline">
 						<input type="checkbox" class="form-control mr-1 text-left"
 							id="check1" name="check1">
-						<img src="${root}/resources/bag/bag_call.jpg" width="150px">
+						<img src="${root}/resources/bag/bag_shoes.jpg" width="150px">
 					</div>
 				</td>
 				<td>
@@ -65,7 +65,7 @@
 		</table>
 		</table>
 		<div style="text-align: center" class="mb-3">
-		<button type="button" class="btn btn-primary" id = "btn_order">주문하기</button>
+		<button type="button" class="btn btn-primary" id = "btn">주문하기</button>
 		<button type="button" class="btn btn-primary" id = "btn_cancel">취소하기</button>
 		</div>
 		<div class="jumbotron">
