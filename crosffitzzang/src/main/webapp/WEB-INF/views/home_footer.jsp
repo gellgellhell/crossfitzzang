@@ -1,31 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!-- home_footer start -->
+<div class = "container">
+
 <footer class="jumbotron bg-secondary mt-1 clearfix">
 	<div class="col-lg-2 col-md-6 col-sm-12 float-left">
 		<div class="card-body text-white">
-			<p> 이용약관 </p>
+			<a href = "#"> 이용약관 </a>
 		</div>
 	</div>
 	<div class="col-lg-3 col-md-6 col-sm-12 float-left">
 		<div class="card-body text-white">
-			<p> 개인정보처리방침 </p>
+			<a href = "#"> 개인정보처리방침 </a>
 		</div>
 	</div>
 	<div class="col-lg-3 col-md-6 col-sm-12 float-left">
 		<div class="card-body text-white">
-			<p> 위치정보이용약관 </p>
+			<a href = "#"> 위치정보이용약관 </a>
 		</div>
 	</div>
 	<div class="col-lg-2 col-md-6 col-sm-12 float-left">
 		<div class="card-body text-white">
-			<p> 센터등록요청 </p>
+			<a href = "#"> 센터등록요청 </a>
 		</div>
 	</div>
 	<div class="col-lg-2 col-md-6 col-sm-12 float-left">
 		<div class="card-body text-white">
-			<p> 문의하기 </p>
+			<a href = "#"> 문의하기 </a>
 		</div>
 	</div>
 </footer>
+</div>
 <!-- home_footer end -->

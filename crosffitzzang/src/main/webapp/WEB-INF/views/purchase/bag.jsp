@@ -50,8 +50,8 @@
 					<span class="value"> </span><span class="unit">원</span>	
 				</td>
 				<td class="float-right">
-					<button type="button" class="btn btn-primary" onclick="" >구매</button>
-					<button type="button" class="btn btn-primary btn-delete" onclick="">삭제</button>
+					<button type="button" class="btn btn-primary" id = "btn_purchase" >구매</button>
+					<button type="button" class="btn btn-primary btn-delete" id = "btn_delete">삭제</button>
 				</td>
 		</tr>
 		<table class="table table-hover">
@@ -65,8 +65,8 @@
 		</table>
 		</table>
 		<div style="text-align: center" class="mb-3">
-		<button type="button" class="btn btn-primary">주문하기</button>
-		<button type="button" class="btn btn-primary">취소하기</button>
+		<button type="button" class="btn btn-primary" id = "btn_order">주문하기</button>
+		<button type="button" class="btn btn-primary" id = "btn_cancel">취소하기</button>
 		</div>
 		<div class="jumbotron">
  		<h4>주문전 유의사항</h4>
