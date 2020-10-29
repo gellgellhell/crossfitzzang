@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="QuestionMapper">
+
+	<select id="totlistCnt"
+			parameterType="kr.co.ict3.brd.question.SearchDTO"
+			resultType="int">
+		SELECT COUNT(*)
+		FROM free_board
+		<if test="search_option != null
+					and search_option != ''
+					and search_word != null
+					and search_word != ''">
+			<choose>
+				<when test="search_option == 'title'">
+					WHERE title
+							LIKE CONCAT('%',#{search_word},'%')
+				</when>
+				<when test="search_option == 'writer'">
+					WHERE writer
+							LIKE CONCAT('%',#{search_word},'%')
+				</when>
+			</choose>
+		</if>
+	</select>
+
+	<select id="listSearch"
+			parameterType="kr.co.ict3.brd.question.SearchDTO"
+			resultType="kr.co.ict3.brd.question.QuestionDTO">
+		SELECT bno, title, writer, view_cnt, write_date
+		FROM free_board
+		<if test="search_option != null
+					and search_option != ''
+					and search_word != null
+					and search_word != ''">
+			<choose>
+				<when test="search_option == 'title'">
+					WHERE title
+							LIKE CONCAT('%',#{search_word},'%')
+				</when>
+				<when test="search_option == 'writer'">
+					WHERE writer
+							LIKE CONCAT('%',#{search_word},'%')
+				</when>
+			</choose>
+		</if>
+		ORDER BY bno DESC
+		LIMIT #{search_page_num}, 10
+	</select>
+
+	<select id="listAll"
+			resultType="kr.co.ict3.brd.question.QuestionDTO">
+		SELECT bno, title, writer, view_cnt, write_date
+		FROM free_board
+	</select>
+
+	<select id="detail"
+			parameterType="java.lang.String"
+			resultType="kr.co.ict3.brd.question.QuestionDTO">
+		SELECT bno, title, writer, cnts
+			, view_cnt, like_cnt, unlike_cnt, write_date
+		FROM free_board
+		WHERE bno = #{bno}
+	</select>
+
+	<update id="likeCnt"
+			parameterType="java.util.HashMap">
+		UPDATE free_board
+		<choose>
+			<when test="heart == 'heart'">
+				SET like_cnt = like_cnt + 1
+			</when>
+			<otherwise>
+				SET unlike_cnt = unlike_cnt + 1
+			</otherwise>
+		</choose>
+		WHERE bno = #{bno}
+	</update>
+
+	
+	<insert id="insHanjul"
+			parameterType="kr.co.ict3.brd.question.ReplyDTO">
+		insert into free_board_reply
+				(bno, writer, cnts, pwd, write_date)
+		values (#{bno}, #{writer}
+				, #{cnts}, #{pwd}, now())	
+	</insert>
+
+	<select id="viewHanjul"
+			parameterType="java.lang.String"
+			resultType="kr.co.ict3.brd.question.ReplyDTO">
+		select rno, bno, writer, cnts, write_date
+		from free_board_reply
+		where bno = #{bno}
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+

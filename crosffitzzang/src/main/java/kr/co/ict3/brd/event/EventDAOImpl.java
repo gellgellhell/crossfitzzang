@@ -17,7 +17,7 @@ public class EventDAOImpl implements EventDAO {
 	public List<EventBoardDTO> listAll() {
 		
 		List<EventBoardDTO> list
-			= sqlSession.selectList("MemberMapper.listAll");
+			= sqlSession.selectList("EventMapper.listAll");
 
 		return list;
 	}//listAll
@@ -25,7 +25,7 @@ public class EventDAOImpl implements EventDAO {
 	@Override
 	public EventBoardDTO detail(String bno) {
 		EventBoardDTO dto
-		= sqlSession.selectOne("MemberMapper.detail", bno);
+		= sqlSession.selectOne("EventMapper.detail", bno);
 		return dto;
 	}//detail
 
@@ -36,7 +36,7 @@ public class EventDAOImpl implements EventDAO {
 		map.put("bno", bno);
 		map.put("heart", heart);
 		int updateCnt
-		= sqlSession.update("MemberMapper.likeCnt", map);
+		= sqlSession.update("EventMapper.likeCnt", map);
 		return updateCnt;
 	}//likeCnt
 
@@ -44,28 +44,28 @@ public class EventDAOImpl implements EventDAO {
 	public int insHanjul(ReplyDTO inDto) {
 		System.out.println("dao - insHanjul");
 		int successCnt
-		= sqlSession.insert("MemberMapper.insHanjul", inDto);
+		= sqlSession.insert("EventMapper.insHanjul", inDto);
 		return successCnt;
 	}//insHanjul
 
 	@Override
 	public List<ReplyDTO> viewHanjul(String bno) {
 		List<ReplyDTO> list
-		= sqlSession.selectList("MemberMapper.viewHanjul", bno);
+		= sqlSession.selectList("EventMapper.viewHanjul", bno);
 		return list;
 	}//viewHanjul
 
 	@Override
 	public List<EventBoardDTO> listSearch(SearchDTO inDto) {
 		List<EventBoardDTO> list
-		= sqlSession.selectList("MemberMapper.listSearch", inDto);
+		= sqlSession.selectList("EventMapper.listSearch", inDto);
 		return list;
 	}//listSearch
 
 	@Override
 	public int totlistCnt(SearchDTO inDto) {
 		int totlistCnt
-		= sqlSession.selectOne("MemberMapper.totlistCnt", inDto);
+		= sqlSession.selectOne("EventMapper.totlistCnt", inDto);
 		return totlistCnt;
 	}//totlistCnt
 

@@ -75,7 +75,7 @@
 		<script type="text/javascript">
 		$(document).ready(function() {
 			$("#btn_search").click(function() {
-				location.href="${root}/brd_event/list"
+				location.href="${root}/brd_notice/list"
 					+"?search_option="+$("#search_option").val()
 					+"&search_word="+$("#search_word").val()
 			});//click

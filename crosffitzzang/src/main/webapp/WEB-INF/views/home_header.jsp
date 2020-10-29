@@ -72,10 +72,10 @@
 					<div class="w3-dropdown-hover">
 						<button class="w3-button bg-secondary text-white font-weight-bold">체육관 찾기</button>
 							<div class="w3-dropdown-content w3-bar-block w3-border">
-									<a href="${root}/gym/neargym" class="w3-bar-item w3-button">내 주변 체육관</a>
+									<a href="${root}/gym/neargym" class="w3-bar-item w3-button">지역별 체육관</a>
   							        <a href="${root}/gym/recommend_gym" class="w3-bar-item w3-button">추천 체육관</a>
-    								<a href="${root}/gym/realtime_schedule" class="w3-bar-item w3-button">실시간 맞춤 일정</a>
     								<a href="${root}/gym/recommend_schedule" class="w3-bar-item w3-button">오늘의 추천 일정</a>
+    								<a href="${root}/gym/realtime_schedule" class="w3-bar-item w3-button">실시간 맞춤 일정</a>
                             </div>
 					</div>
 					
@@ -89,11 +89,11 @@
 					</div>
 
 					<div class="w3-dropdown-hover">
-						<button class="w3-button bg-secondary text-white font-weight-bold">INFO</button>
+						<button class="w3-button bg-secondary text-white font-weight-bold">고객센터</button>
 							<div class="w3-dropdown-content w3-bar-block w3-border">
-								<a href="${root}/info/man2man" class = "w3-bar-item w3-button">1대1 문의사항</a>
-								<a href="${root}/info/qna" class = "w3-bar-item w3-button"> 질문 및 건의사항 </a>
-								<a href="${root}/info/mypage" class = "w3-bar-item w3-button">MYPAGE</a>
+								<a href="${root}/brd_m2m/list" class = "w3-bar-item w3-button">1대1 문의사항</a>
+								<a href="${root}/brd_qna/list" class = "w3-bar-item w3-button"> 질문 및 건의사항 </a>
+								<a href="${root}/brd_question/list" class = "w3-bar-item w3-button">자주 묻는 질문</a>
 							</div>
 					</div>
 			</div>

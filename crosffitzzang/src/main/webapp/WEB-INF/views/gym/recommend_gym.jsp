@@ -16,6 +16,7 @@
 </head>
 <body data-spy="scroll" data-target=".div" data-offset="50">
 	<%@ include file="../home_header.jsp" %>
+		<h1 class="text-muted text-center mt-3 mb-3">추천 체육관</h1>
 		<div class="container clearfix">
 		
 		

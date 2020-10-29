@@ -23,6 +23,12 @@ public class GymController {
 	public String recommend_schedule() {
 		return "gym/recommend_schedule";
 	}// recommend_schedule
+	
+	@RequestMapping(value = "/realtime_schedule", method = RequestMethod.GET)
+	public String realtime_schedule() {
+		return "gym/realtime_schedule";
+	}// realtime_schedule
+	
 	@RequestMapping(value = "/view", method = RequestMethod.GET)
 	public String gym() {
 		return "gym/view";

@@ -44,7 +44,7 @@
 	<div class = "container">
 		<%@ include file = "../home_header.jsp" %>
 		<h1 class = "text-muted text-center mt-3 mb-3">
-			공지게시판</h1>
+			회원게시판</h1>
 			<div class = "text-right">
 				<button class = "btn btn-primary mb-3"
 					type = "button" id = "btn_wform"> W R I T E </button>
