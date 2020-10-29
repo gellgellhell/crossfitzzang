@@ -9,10 +9,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = "/gym")
 public class GymController {
 	
+	@RequestMapping(value = "/neargym", method = RequestMethod.GET)
+	public String neargym() {
+		return "gym/neargym";
+	}// neargym
+	
+	@RequestMapping(value = "/recommend_gym", method = RequestMethod.GET)
+	public String recommend_gym() {
+		return "gym/recommend_gym";
+	}// recommend_gym
+	
+	@RequestMapping(value = "/recommend_schedule", method = RequestMethod.GET)
+	public String recommend_schedule() {
+		return "gym/recommend_schedule";
+	}// recommend_schedule
 	@RequestMapping(value = "/view", method = RequestMethod.GET)
 	public String gym() {
 		return "gym/view";
-	}// notice
+	}// view
 	
 }//class
 
