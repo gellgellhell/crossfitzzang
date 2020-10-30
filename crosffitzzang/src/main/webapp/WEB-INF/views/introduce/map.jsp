@@ -25,6 +25,8 @@ height : 600px;
 </head>
 <body>
 
+	
+
 	<div class="container">
 		<%@ include file="../home_header.jsp" %>
 		<section class="col-3 float-left bg-light font-weight-bold nav-link mb-5 mt-3" style = "height: 600px;">
