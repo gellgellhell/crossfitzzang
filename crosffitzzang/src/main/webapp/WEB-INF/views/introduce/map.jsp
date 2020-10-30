@@ -24,16 +24,17 @@ height : 600px;
 
 </head>
 <body>
-<%@ include file="../home_header.jsp" %>
+
 	<div class="container">
+		<%@ include file="../home_header.jsp" %>
 		<section class="col-3 float-left bg-light font-weight-bold nav-link mb-5 mt-3" style = "height: 600px;">
 			<ul id = "ibox">
 				<li class="label mt-2 mb-2 list-group-item list-group-item-action">
-					<a href="${root}/introduce/introduce1"><span class="notice">크로스핏이란</span></a>
+					<a href="${root}/introduce/crossfit"><span class="notice">크로스핏이란</span></a>
 				</li>
 
 				<li class="label mt-2 mb-2 list-group-item list-group-item-action">
-					<a href="${root}/introduce/introduce1"><span class="notice">소개</span></a>
+					<a href="${root}/introduce/introduce"><span class="notice">소개</span></a>
 				</li>
 				
 				<li class="label list-group-item list-group-item-action">
