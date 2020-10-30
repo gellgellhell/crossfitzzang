@@ -15,8 +15,9 @@
 
 </head>
 <body>
-<%@ include file="../home_header.jsp" %>
+
 	<div class="container clearfix">
+		<%@ include file="../home_header.jsp" %>
 	<!-- 왼쪽 칸 시작 -->
 		<section class="col-3 float-left bg-light font-weight-bold nav-link mb-5 mt-3" style="height: 580px">
 			<ul>
@@ -37,7 +38,7 @@
 	
 
 	<!-- 오른쪽 칸 시작 -->
-	<iframe width="960" height="540" src="https://www.youtube.com/embed/bUoBqWrSfZE?amp;autoplay=1&amp;playlist=lDZnM3Uuq0E&amp;loop=1"" 
+	<iframe class="ml-3 mt-3" width="810"  height="580" src="https://www.youtube.com/embed/bUoBqWrSfZE?amp;autoplay=1&amp;playlist=lDZnM3Uuq0E&amp;loop=1"" 
 		frameborder="0" allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen =""></iframe>
 
 		</div>
