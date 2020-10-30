@@ -43,11 +43,12 @@
 
 </head>
 <body>
+	<div class="container">
 	<%@ include file="../home_header.jsp" %>
-			<h1 class="text-muted text-center mt-3 mb-3"> 지역별 체육관</h1>
+	</div>
+	
 		<div class="container form-inline">
-			<br>
-			<br>
+		
 	<div class="dropdown mr-4 mt-4 mb-2">
   <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="width:120px; text-align:right;">
     시

@@ -15,15 +15,15 @@
 
 </head>
 <body data-spy="scroll" data-target=".div" data-offset="50">
-	<%@ include file="../home_header.jsp" %>
-		<h1 class="text-muted text-center mt-3 mb-3">추천 체육관</h1>
+		<div class="container">
+		<%@ include file="../home_header.jsp" %>
+		</div>
 		<div class="container clearfix">
-		
-		
-		<div>
-			<section class="col-3 float-left bg-light font-weight-bold nav-link mb-5 mt-3" style="height: 580px">
+			<h1 class="text-muted text-center mt-3">추천 체육관</h1>
+
+			<section class="col-3 float-left bg-light font-weight-bold nav-link mb-5 mt-2" style="height: 580px">
 					<ul>
-					<div class="label mt-2 mb-2 list-group-item list-group-item-action"><span class="seoul">지역별 베스트 체육관</span></a></div>
+					<div class="label mt-2 mb-2 list-group-item list-group-item-action"><span class="seoul">지역별 베스트 체육관</span></div>
 					<div class="label list-group-item list-group-item-action"><a href=""><span class="kyunggi">서울</span></a></div>
 					<div class="label list-group-item list-group-item-action"><a href=""><span class="kyunggi">경기</span></a></div>
 					<div class="label list-group-item list-group-item-action"><a href=""><span class="kyunggi">부산</span></a></div>
@@ -31,7 +31,6 @@
 					</ul>
 			</section>
 		
-		</div>
 		<!-- section start -->
 		<section class="border mt-3 pt-4 pb-5"
 					style="overflow: hidden;">

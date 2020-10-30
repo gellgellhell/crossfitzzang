@@ -17,8 +17,9 @@
 <style> .carousel-inner img {width: 100%; height: 100%;} </style>
 </head>
 <body data-spy="scroll" data-target=".navbar">
-		<%@ include file="./home_header.jsp" %>
+		
 <div class = "container">
+	<%@ include file="./home_header.jsp" %>
 
 <div id="demo" class="carousel slide float-left w-75 mb-2" data-ride="carousel">
 

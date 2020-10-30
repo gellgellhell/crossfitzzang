@@ -14,9 +14,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<%@ include file="../home_header.jsp" %>
-		<h1 class="text-muted text-center mt-3 mb-3"> 오늘의 추천 일정</h1>
+		<div class="container">
+		<%@ include file="../home_header.jsp" %>
+		</div>
+		
 		<div class="container mt-3">
+			<h1 class="text-muted text-center mt-3 mb-3"> 오늘의 추천 일정</h1>
+			
 			<table class="table table-bordered" style=" height:400px;">
     <thead class="thead-dark">
       <tr>
