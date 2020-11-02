@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="JoinMapper">
+
+	<select id="idCheck"
+			parameterType="java.lang.String"
+			resultType="int">
+		select count(id) cnt
+		from mbr
+		where id = #{id}
+	</select>
+
+	<insert id="formSubmit"
+			parameterType="kr.co.ict3.join.MbrDTO">
+		INSERT INTO mbr (id, pwd, tel, email
+						, zone_code, addr1, addr2, join_date)
+		VALUES (#{id}, #{pwd}, #{tel}, #{email}
+				, #{zone_code}, #{addr1}, #{addr2}, now())
+		<selectKey resultType="java.lang.String"
+					keyProperty="mno" order="AFTER">
+			select LAST_INSERT_ID() mno
+		</selectKey>
+	</insert>
+
+	<select id="login"
+			parameterType="kr.co.ict3.join.MbrDTO"
+			resultType="int">
+		SELECT mno
+		FROM mbr
+		WHERE id = #{id}
+		AND pwd = #{pwd}
+	</select>
+	<update id = "updatembrinfo">
+		UPDATE mbr SET
+		pwd = #{pwd}, tel = #{tel}, email = #{email}, 
+		zone_code = #{zone_code}, addr1 = #{addr1}, addr2 = #{addr2}
+		WHERE id = #{id} 
+		AND pwd = #{pwd}
+	
+	</update>
+
+
+
+	<select id="pwdCheck"
+			parameterType="kr.co.ict3.join.MbrDTO"
+			resultType="int">
+		SELECT count(mno) cnt
+		FROM mbr
+		WHERE id = #{id}
+		AND pwd = #{pwd}
+	</select>
+
+	<insert id="insertBizMember"
+			parameterType="kr.co.ict3.join.MbrDTO">
+		insert into mbr_biz (mno, biz_reg_no
+							, biz_place_nm, biz_boss_nm)
+		values (#{mno}, #{biz_reg_no}
+				, #{biz_place_nm}, #{biz_boss_nm});
+	</insert>
+
+	
+</mapper>
+
+
+
+
+
+
+
+
+

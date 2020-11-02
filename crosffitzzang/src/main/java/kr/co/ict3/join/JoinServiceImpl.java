@@ -40,6 +40,13 @@ public class JoinServiceImpl implements JoinService {
 		return mbrNo;
 	}//login
 
+	@Override
+	public void updatembrinfo(MbrDTO inDto) {
+		
+		dao.updatembrinfo(inDto);
+		
+	}// updatembrinfo
+
 }//class
 
 

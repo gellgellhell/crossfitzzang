@@ -12,4 +12,6 @@ public interface JoinDAO {
 
 	public int insertBizMember(MbrDTO inDto);
 
+	public void updatembrinfo(MbrDTO inDto);
+
 }//interface

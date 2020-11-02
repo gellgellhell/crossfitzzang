@@ -30,7 +30,7 @@
 			<c:when test="${login_dto.mno != null && login_dto.mno.length() > 0}">
 			<li class="nav-item">
 				<a class="nav-link text-dark font-weight-bold float-left" id="btn_uform" 
-				href="${root}/member_board/uform">회원정보수정</a>
+				href="${root}/join/mypage">MYPAGE</a>
 			
 				<a class="nav-link text-dark font-weight-bold float-right" id="btn_logout" 
 				href="#">로그아웃</a>
@@ -40,7 +40,7 @@
 		<c:otherwise>
 			<li class="nav-item">
 				<a class="nav-link text-dark font-weight-bold"
-				href="${root}/join/form">회원가입</a>
+				href="${root}/join/register">회원가입</a>
 			</li>
 			
 			<li class="nav-item">

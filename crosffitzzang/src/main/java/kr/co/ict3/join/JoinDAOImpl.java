@@ -49,6 +49,11 @@ public class JoinDAOImpl implements JoinDAO {
 		return successCnt;
 	}//insertBizMember
 
+	@Override
+	public void updatembrinfo(MbrDTO inDto) {
+		 sqlSession.update("JoinMapper.updatembrinfo", inDto);
+	}// updatembrinfo
+
 }//class
 
 

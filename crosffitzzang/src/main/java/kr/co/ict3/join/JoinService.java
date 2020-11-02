@@ -8,4 +8,6 @@ public interface JoinService {
 
 	public int login(MbrDTO inDto);
 
+	public void updatembrinfo(MbrDTO inDto);
+
 }//interface

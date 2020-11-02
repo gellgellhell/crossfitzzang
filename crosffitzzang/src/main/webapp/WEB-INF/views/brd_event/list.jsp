@@ -136,6 +136,7 @@
 </c:if>
 		</ul>
 	</div>
+	<%@ include file="../home_footer.jsp" %>
 </body>
 </html>
 
