@@ -75,7 +75,7 @@
 		<script type="text/javascript">
 		$(document).ready(function() {
 			$("#btn_search").click(function() {
-				location.href="${root}/brd_notice/list"
+				location.href="${root}/brd_event/list"
 					+"?search_option="+$("#search_option").val()
 					+"&search_word="+$("#search_word").val()
 			});//click
@@ -86,26 +86,27 @@
 			});//keyup
 		});//ready
 		</script>
-			<div class="text-right">
-				<button class="btn btn-primary mb-3"
-					type="button" id="btn_wform"> W R I T E </button>
-			</div>
 		<table class="table table-hover">
 			<thead>
-				<th>번호</th>
-				<th>제목</th>
-				<th>작성자</th>
-				<th>조회수</th>
-				<th>작성일</th>
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>조회수</th>
+					<th>작성일</th>
+				</tr>
 			</thead>
 			<tbody>
-			<tr>
+			
+			<c:forEach var="list" items="${board_list}">
+				<tr>
 					<td>${dto.bno}</td>
 					<td>${dto.title}</td>
 					<td>${dto.writer}</td>
 					<td>${dto.view_cnt}</td>
 					<td>${dto.write_date}</td>
 				</tr>
+			</c:forEach>
 			</tbody>
 		</table>
 			<c:set var="search_uri1"
