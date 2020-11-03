@@ -99,6 +99,13 @@
 				<th>작성일</th>
 			</thead>
 			<tbody>
+			<tr>
+					<td>${dto.bno}</td>
+					<td>${dto.title}</td>
+					<td>${dto.writer}</td>
+					<td>${dto.view_cnt}</td>
+					<td>${dto.write_date}</td>
+				</tr>
 			</tbody>
 		</table>
 			<c:set var="search_uri1"

@@ -1,9 +1,6 @@
 package kr.co.ict3.brd.event;
 
 import java.util.List;
-
-import javax.print.DocFlavor.READER;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:set var="root" value="${pageContext.request.contextPath}" />
 <!-- login modal start -->
 <div class="modal" id="login_modal">
 	<div class="modal-dialog modal-sm">
@@ -16,23 +14,23 @@
 			<!-- modal body -->
 			<div class="modal-body">
 					<div class="form-group">
-						<label for="login_id">Your Id.</label>
+						<label for="login_id">아이디</label>
 						<input class="form-control"
 							type="text" id="login_id">
 					</div>
 					<div class="form-group">
-						<label for="login_pwd">Your Password.</label>
+						<label for="login_pwd">비밀번호</label>
 						<input class="form-control"
 							type="password" id="login_pwd">
 					</div>
 			</div>
 			<!-- modal footer -->
 			<div class="modal-footer">
-				<button type="button"
-						class="btn btn-danger"
-						data-dismiss="modal">Close</button>
 				<button type="button" id="btn_login"
-						class="btn btn-primary">LogIn</button>
+						class="btn btn-danger text-dark">LogIn</button>
+				<button type="button"
+						class="btn btn-danger text-dark"
+						data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>
@@ -74,7 +72,7 @@ $(document).ready(function() {
 	});//click
 	$("#btn_logout").click(function() {
 		$.get(
-				"${root}/inout/out"
+				"${pageContext.request.contextPath}/inout/out"
 				, {}
 				, function(data, status) {
 					if(data == 1){

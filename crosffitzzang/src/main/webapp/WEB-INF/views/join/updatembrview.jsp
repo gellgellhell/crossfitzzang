@@ -57,9 +57,9 @@
 				<div class="form-group has-feedback">
 					<label for="tel1">전화번호</label>
 						<div class="form-inline">
-							<input type="text" class="form-control mr-1 inputNum"id="tel1" name="tel1" size="3" maxlength="3" value="${login_dto.tel1}">
-							- <input type="text" class="form-control ml-1 mr-1 inputNum" id="tel2" name="tel2" size="4" maxlength="4" value ="${login_dto.tel2}">
-							- <input type="text" class="form-control ml-1 mr-1 inputNum" id="tel2" name="tel3" size="4" maxlength="4" value ="${login_dto.tel3}">
+							<input type="text" class="form-control mr-1 inputNum"id="tel1" name="tel1" size="3" maxlength="3" value="${login_dto.tel}">
+							- <input type="text" class="form-control ml-1 mr-1 inputNum" id="tel2" name="tel2" size="4" maxlength="4" value ="${login_dto.tel}">
+							- <input type="text" class="form-control ml-1 mr-1 inputNum" id="tel2" name="tel3" size="4" maxlength="4" value ="${login_dto.tel}">
 						</div>
 				</div>
 				

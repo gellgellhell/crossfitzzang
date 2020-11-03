@@ -24,7 +24,7 @@ public class JoinController {
 	@RequestMapping(value="/idchk", method=RequestMethod.GET)
 	public String idCheck(String id) {
 		int idCount = service.idCheck(id);
-		return ""+idCount;
+		return ""+ idCount;
 	}//idCheck
 
 	@ResponseBody

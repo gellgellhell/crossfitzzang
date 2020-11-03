@@ -15,16 +15,6 @@ public class EventController {
 	@Autowired
 	private EventService service;
 
-	@RequestMapping(value="/list_rest2", method=RequestMethod.GET)
-	public String listRest2() {
-		return "brd_event/list_rest2";
-	}//listRest2
-
-	@RequestMapping(value="/list_rest", method=RequestMethod.GET)
-	public String listRest() {
-		return "brd_event/list_rest";
-	}//listRest
-
 	@RequestMapping(value="/list_search", method=RequestMethod.GET)
 	public String listSearch(Model model, SearchDTO inDto, String reqPage) {
 		if(reqPage == null || reqPage.equals("")) {
