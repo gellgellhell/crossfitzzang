@@ -82,9 +82,9 @@
 					<div class="w3-dropdown-hover">
 						<button class="w3-button bg-secondary text-white font-weight-bold">게시판</button>
 							<div class="w3-dropdown-content w3-bar-block w3-border">
-								<a href="${root}/brd_notice/list" class="w3-bar-item w3-button">공지 게시판</a>
-								<a href="${root}/brd_event/list" class="w3-bar-item w3-button">이벤트 게시판</a>
-								<a href="${root}/brd_mbr/list" class="w3-bar-item w3-button">회원 게시판</a>
+								<a href="${root}/brd_notice/list_search" class="w3-bar-item w3-button">공지 게시판</a>
+								<a href="${root}/brd_event/list_search" class="w3-bar-item w3-button">이벤트 게시판</a>
+								<a href="${root}/brd_mbr/list_search" class="w3-bar-item w3-button">회원 게시판</a>
 							</div>
 					</div>
 

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value = "brd_event")
+@RequestMapping(value = "/brd_event")
 public class EventController {
 
 	@Autowired
@@ -59,7 +59,7 @@ public class EventController {
 		model.addAttribute("search_dto", inDto);
 		model.addAttribute("board_list", list);
 
-		return "brd_event/list_search";
+		return "brd_event/list";
 	}//listSearch
 
 	@RequestMapping(value="/detail", method=RequestMethod.GET)

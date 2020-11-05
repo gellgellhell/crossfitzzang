@@ -15,16 +15,6 @@ public class NoticeController {
 	@Autowired
 	private NoticeService service;
 
-	@RequestMapping(value="/list_rest2", method=RequestMethod.GET)
-	public String listRest2() {
-		return "brd_notice/list_rest2";
-	}//listRest2
-
-	@RequestMapping(value="/list_rest", method=RequestMethod.GET)
-	public String listRest() {
-		return "brd_notice/list_rest";
-	}//listRest
-
 	@RequestMapping(value="/list_search", method=RequestMethod.GET)
 	public String listSearch(Model model, SearchDTO inDto, String reqPage) {
 		if(reqPage == null || reqPage.equals("")) {
@@ -69,7 +59,7 @@ public class NoticeController {
 		model.addAttribute("search_dto", inDto);
 		model.addAttribute("board_list", list);
 
-		return "brd_notice/list_search";
+		return "brd_notice/list";
 	}//listSearch
 
 	@RequestMapping(value="/detail", method=RequestMethod.GET)

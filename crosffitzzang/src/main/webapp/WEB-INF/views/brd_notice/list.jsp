@@ -14,34 +14,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<script type="text/javascript">
-	$(document).ready(function() {
-		$.get(
-			"#"
-			, {}//data
-			, function(data, status) {
-				$.each(data, function(index, dto) {
-					$("tbody").append(
-						"<tr>"
-						+"<td>"+dto.bno+"</td>"
-						+"<td>"
-						+"#?bno="
-						+dto.bno+"'>"+dto.title+"</a>"
-						+"</td>"
-						+"<td>"+dto.writer+"</td>"
-						+"<td>"+dto.view_cnt+"</td>"
-						+"<td>"+dto.write_date+"</td>"
-						+"</tr>"
-					);
-				});
-			}
-		);
 
-		$("#btn_wform").click(function() {
-			location.href="#";
-		});
-	});
-	</script>
 	<div class="container">
 		<%@ include file="../home_header.jsp" %>
 		<h1 class="text-muted text-center mt-3 mb-3">
@@ -86,19 +59,27 @@
 			});//keyup
 		});//ready
 		</script>
-			<div class="text-right">
-				<button class="btn btn-primary mb-3"
-					type="button" id="btn_wform"> W R I T E </button>
-			</div>
 		<table class="table table-hover">
 			<thead>
-				<th>번호</th>
-				<th>제목</th>
-				<th>작성자</th>
-				<th>조회수</th>
-				<th>작성일</th>
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>조회수</th>
+					<th>작성일</th>
+				</tr>
 			</thead>
 			<tbody>
+			
+			<c:forEach var="dto" items="${board_list}">
+				<tr>
+					<td>${dto.bno}</td>
+					<td>${dto.title}</td>
+					<td>${dto.writer}</td>
+					<td>${dto.view_cnt}</td>
+					<td>${dto.write_date}</td>
+				</tr>
+			</c:forEach>
 			</tbody>
 		</table>
 			<c:set var="search_uri1"

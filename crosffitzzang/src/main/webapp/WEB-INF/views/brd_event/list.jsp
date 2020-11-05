@@ -14,34 +14,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<script type="text/javascript">
-	$(document).ready(function() {
-		$.get(
-			"#"
-			, {}//data
-			, function(data, status) {
-				$.each(data, function(index, dto) {
-					$("tbody").append(
-						"<tr>"
-						+"<td>"+dto.bno+"</td>"
-						+"<td>"
-						+"#?bno="
-						+dto.bno+"'>"+dto.title+"</a>"
-						+"</td>"
-						+"<td>"+dto.writer+"</td>"
-						+"<td>"+dto.view_cnt+"</td>"
-						+"<td>"+dto.write_date+"</td>"
-						+"</tr>"
-					);
-				});
-			}
-		);
 
-		$("#btn_wform").click(function() {
-			location.href="#";
-		});
-	});
-	</script>
 	<div class="container">
 		<%@ include file="../home_header.jsp" %>
 		<h1 class="text-muted text-center mt-3 mb-3">
@@ -98,7 +71,7 @@
 			</thead>
 			<tbody>
 			
-			<c:forEach var="list" items="${board_list}">
+			<c:forEach var="dto" items="${board_list}">
 				<tr>
 					<td>${dto.bno}</td>
 					<td>${dto.title}</td>

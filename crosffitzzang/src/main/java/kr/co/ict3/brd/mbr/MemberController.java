@@ -12,26 +12,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = "brd_mbr")
 public class MemberController {
 
-
 	@Autowired
 	private MemberService service;
 
-	@RequestMapping(value="/list_rest2"
-								, method=RequestMethod.GET)
-	public String listRest2() {
-		return "brd_mbr/list_rest2";
-	}//listRest2
-
-	@RequestMapping(value="/list_rest"
-								, method=RequestMethod.GET)
-	public String listRest() {
-		return "brd_mbr/list_rest";
-	}//listRest
-
-	@RequestMapping(value="/list_search"
-								, method=RequestMethod.GET)
-	public String listSearch(Model model
-						, SearchDTO inDto, String reqPage) {
+	@RequestMapping(value="/list_search", method=RequestMethod.GET)
+	public String listSearch(Model model, SearchDTO inDto, String reqPage) {
 		if(reqPage == null || reqPage.equals("")) {
 			reqPage = "1";
 		}
@@ -73,33 +58,21 @@ public class MemberController {
 
 		model.addAttribute("search_dto", inDto);
 		model.addAttribute("board_list", list);
-
-		return "brd_mbr/list_search";
+		
+		return "brd_mbr/list";
 	}//listSearch
 
+	@RequestMapping(value="/detail", method=RequestMethod.GET)
+	public String detail(String bno, Model model) {
+		model.addAttribute("bno", bno);
+		return "brd_mbr/detail";
+	}//detail
+	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public String list() {
 		return "brd_mbr/list";
 	}//list
 
-	@RequestMapping(value="/wform", method=RequestMethod.GET)
-	public String wform() {
-		return "brd_mbr/wform";
-	}//wform
-
-	@RequestMapping(value="/detail"
-									, method=RequestMethod.GET)
-	public String detail(String bno, Model model) {
-		model.addAttribute("bno", bno);
-		return "brd_mbr/detail";
-	}//detail
-
-	@RequestMapping(value="/free/uform"
-									, method=RequestMethod.GET)
-	public String uform(String bno, Model model) {
-		model.addAttribute("bno", bno);
-		return "brd_mbr/uform";
-	}//uform
 
 }//class
 

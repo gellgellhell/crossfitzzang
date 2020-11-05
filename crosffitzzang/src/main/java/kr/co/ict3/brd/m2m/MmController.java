@@ -15,16 +15,6 @@ public class MmController {
 	@Autowired
 	private MMService service;
 
-	@RequestMapping(value="/list_rest2", method=RequestMethod.GET)
-	public String listRest2() {
-		return "brd_m2m/list_rest2";
-	}//listRest2
-
-	@RequestMapping(value="/list_rest", method=RequestMethod.GET)
-	public String listRest() {
-		return "brd_m2m/list_rest";
-	}//listRest
-
 	@RequestMapping(value="/list_search", method=RequestMethod.GET)
 	public String listSearch(Model model, SearchDTO inDto, String reqPage) {
 		if(reqPage == null || reqPage.equals("")) {
@@ -68,8 +58,8 @@ public class MmController {
 
 		model.addAttribute("search_dto", inDto);
 		model.addAttribute("board_list", list);
-
-		return "brd_m2m/list_search";
+		
+		return "brd_m2m/list";
 	}//listSearch
 
 	@RequestMapping(value="/detail", method=RequestMethod.GET)

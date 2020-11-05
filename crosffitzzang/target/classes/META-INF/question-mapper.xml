@@ -9,7 +9,7 @@
 			parameterType="kr.co.ict3.brd.question.SearchDTO"
 			resultType="int">
 		SELECT COUNT(*)
-		FROM free_board
+		FROM board_question
 		<if test="search_option != null
 					and search_option != ''
 					and search_word != null
@@ -31,7 +31,7 @@
 			parameterType="kr.co.ict3.brd.question.SearchDTO"
 			resultType="kr.co.ict3.brd.question.QuestionDTO">
 		SELECT bno, title, writer, view_cnt, write_date
-		FROM free_board
+		FROM board_question
 		<if test="search_option != null
 					and search_option != ''
 					and search_word != null
@@ -54,7 +54,7 @@
 	<select id="listAll"
 			resultType="kr.co.ict3.brd.question.QuestionDTO">
 		SELECT bno, title, writer, view_cnt, write_date
-		FROM free_board
+		FROM board_question
 	</select>
 
 	<select id="detail"
@@ -62,13 +62,13 @@
 			resultType="kr.co.ict3.brd.question.QuestionDTO">
 		SELECT bno, title, writer, cnts
 			, view_cnt, like_cnt, unlike_cnt, write_date
-		FROM free_board
+		FROM board_question
 		WHERE bno = #{bno}
 	</select>
 
 	<update id="likeCnt"
 			parameterType="java.util.HashMap">
-		UPDATE free_board
+		UPDATE board_question
 		<choose>
 			<when test="heart == 'heart'">
 				SET like_cnt = like_cnt + 1
@@ -83,7 +83,7 @@
 	
 	<insert id="insHanjul"
 			parameterType="kr.co.ict3.brd.question.ReplyDTO">
-		insert into free_board_reply
+		insert into board_question_reply
 				(bno, writer, cnts, pwd, write_date)
 		values (#{bno}, #{writer}
 				, #{cnts}, #{pwd}, now())	
@@ -93,7 +93,7 @@
 			parameterType="java.lang.String"
 			resultType="kr.co.ict3.brd.question.ReplyDTO">
 		select rno, bno, writer, cnts, write_date
-		from free_board_reply
+		from board_question_reply
 		where bno = #{bno}
 	</select>
 
