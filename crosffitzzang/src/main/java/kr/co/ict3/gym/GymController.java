@@ -24,7 +24,7 @@ public class GymController {
 		model.addAttribute("board_dto", inDto);
 		model.addAttribute("board_list", list);
 		
-		return "gym_board/recommend_gym";
+		return "gym/recommend_gym";
 
 	} // recommend_gym
 	
@@ -33,9 +33,9 @@ public class GymController {
 		
 		GymDTO dto = service.neargym(bno1);
 		
-		model.addAttribute("board_dto", dto);
+		model.addAttribute("board_dto1", dto);
 		
-		return "gym_board/neargym";
+		return "gym/neargym";
 
 	}//home
 	
@@ -45,9 +45,9 @@ public class GymController {
 		List<GymDTO> list2 = service.recommend_schedule(inDto);
 				
 		model.addAttribute("board_dto2", inDto);
-		model.addAttribute("board_list", list2);
+		model.addAttribute("board_list2", list2);
 		
-		return "gym_board/recommend_schedule";
+		return "gym/recommend_schedule";
 
 	}//recommend_schedule
 	
@@ -56,10 +56,10 @@ public class GymController {
 		
 		List<GymDTO> list3 = service.realtime_schedule(inDto);
 				
-		model.addAttribute("board_dto2", inDto);
-		model.addAttribute("board_list", list3);
+		model.addAttribute("board_dto3", inDto);
+		model.addAttribute("board_list3", list3);
 		
-		return "gym_board/realtime_schedule";
+		return "gym/realtime_schedule";
 
 	}//recommend_schedule
 	
