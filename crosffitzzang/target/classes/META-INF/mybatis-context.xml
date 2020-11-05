@@ -13,6 +13,7 @@
 		<mapper resource = "META-INF/notice-mapper.xml" />
 		<mapper resource = "META-INF/event-mapper.xml" />
 		<mapper resource = "META-INF/member-mapper.xml" />
+		<mapper resource = "META-INF/gymboard-mapper.xml" />
 	</mappers> 
 
 </configuration>

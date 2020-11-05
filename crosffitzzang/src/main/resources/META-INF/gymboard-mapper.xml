@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="GymBoardMapper">
+
+	<select id="recommend_gym"
+			resultType="kr.co.ict32.gymboard.GymDTO">
+		SELECT bno, title, price, sell_count, location
+		, tell3, address3, content, file3
+		FROM best_board
+	</select>
+	
+	<select id="recommend_schedule"
+			resultType="kr.co.ict32.gymboard.GymDTO">
+		SELECT bno, title, location
+		, tell3, address3, file3
+		FROM best_board
+	</select>
+	
+	<select id="neargym"
+			parameterType="java.lang.String"
+			resultType="kr.co.ict32.gymboard.GymDTO">
+		select bno, title, location
+		, tell3, address3, file3
+		from best_board
+		where bno = #{bno}
+	</select>
+	
+	<select id="realtime_schedule"
+			resultType="kr.co.ict32.gymboard.GymDTO">
+		SELECT bno, title, location
+		, tell3, address3, file3
+		FROM best_board
+	</select>
+
+</mapper>
