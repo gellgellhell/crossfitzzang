@@ -32,8 +32,10 @@ public class GymController {
 	public String neargym(Model model ,String bno1) {
 		
 		GymDTO dto = service.neargym(bno1);
+		List<DongCodeDTO> list = service.selectSido();
 		
 		model.addAttribute("board_dto1", dto);
+		model.addAttribute("sidoList", list);
 		
 		return "gym/neargym";
 

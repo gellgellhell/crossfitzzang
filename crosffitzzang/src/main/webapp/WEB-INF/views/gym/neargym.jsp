@@ -15,84 +15,139 @@
 <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=c7f356da0bd7793c466a860c8e71c697&libraries=services"></script>
 
 <script type="text/javascript">
-// $(document).ready(function() {
-// 	$("#btn_search").click(function() {
-// 		$.get(
-// 			"${root}/maprest/searchjp1"
-// 			, { searchWord : $("#search_word").val() }
-// 			, function(data, status) {
-// 				$("tbody").empty();
-// 				$.each(data, function(index, dto) {
-// 					 					$("tbody").append(
-// 						"<tr>"
-// 						+ "<td>" + dto.bizplc_nm + "</td>"
-// 						+ "<td>" + dto.refine_roadnm_addr + "</td>"
-// 						+ "<td>" + dto.locplc_faclt_telno_dtls + "</td>"
-// 						+ "</tr>"
-//					);//append
-// 					displayMarker(dto.refine_wgs84_lat
-//									, dto.refine_wgs84_logt
-//									, dto.bizplc_nm);
-//				});//each
-//				mapLevel(8);
-//			}//function
-//		);//get
-//	});//click
-// });//ready
+$(document).ready(function() {
+	$("#btn_search").click(function() {
+		$.get(
+			"${root}/gymrest/searchgym1"
+			, { searchWord : $("#search_word").val() }
+			, function(data, status) {
+				$("tbody").empty();
+				$.each(data, function(index, dto) {
+					$("tbody").append(
+					 "<tr>"
+					+ "<td>" + dto.bno + "</td>"
+					+ "<td>" + dto.title + "</td>"
+					+ "<td>" + dto.location + "</td>"
+					+ "<td>" + dto.tell3 + "</td>"
+					+ "</tr>"
+					) //append
+					
+				}); //each
+				mapLevel(8);
+			}//function
+		); //get
+	}); //click
+}); //ready
 </script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#sel_l").change(function() {
+		$.get(
+			"${root}/gymrest/selectGugun"
+			, { sidoCode : $("#sel_l").val() }
+			, function(data, status) {
+				$("#sel_m").empty();
+				$("#sel_m").append(
+						"<option value='0'>지역구 선택</option>"
+				);
+				$.each(data, function(index, dto) {
+					$("#sel_m").append(
+						"<option value='"+dto.gugun_code+"'>"
+						+ dto.gugun_name
+						+ "</option>"
+					);//append
+				});//each
+			}//function
+		);//get
+	});//change
+
+	$("#btn_search").click(function() {
+		if($("#sel_l").val() == 0){
+			alert("시도 코드를 선택하세요.");
+			return;
+		}
+		$.get(
+			"${root}/gymrest/jpListWithGugun"
+			, {
+				sido_code : $("#sel_l").val()
+				, gugun_code : $("#sel_m").val()
+			}
+			, function(data, status) {
+				$("tbody").empty();
+				mapNull();
+				$.each(data, function(index, dto) {
+					$("tbody").append(
+						"<tr>"
+							+ "<td>" + dto.bno + "</td>"
+							+ "<td>" + dto.title + "</td>"
+							+ "<td>" + dto.location + "</td>"
+							+ "<td>" + dto.tell3 + "</td>"
+						+ "</tr>"
+					);//append
+
+				});//each
+				mapLevel(8);
+			}//function
+			, "json"
+		);//get
+	});//change
+});//ready
+</script>
+
+
 
 </head>
 <body>
-	<div class="container">
 	<%@ include file="../home_header.jsp" %>
-	</div>
-	
 		<div class="container form-inline">
+		<div class="form-inline mb-3">
+			<label for="sel_l" class="mr-1">시도 : </label>
+			<select id="sel_l" class="form-control mr-1">
+				<option value="0">시도 선택</option>
+				<c:forEach var="dto" items="${sidoList}">
+					<option value="${dto.sido_code}">
+						${dto.sido_name}
+					</option>
+				</c:forEach>
+			</select>
+			
+			<label for="sel_m" class="mr-1">구군 : </label>
+			<select id="sel_m" class="form-control mr-1">
+				<option value="0">구군 선택</option>
+				<c:forEach var="dto" items="${sidoList}">
+					<option value="${dto.gugun_code}">
+						${dto.gugun_name}
+					</option>
+				</c:forEach>
+			</select>
+			
+		</div>
 		
-	<div class="dropdown mr-4 mt-4 mb-2">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="width:120px; text-align:right;">
-    시
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">서울시</a>
-    <a class="dropdown-item" href="#">경기도</a>
-    <a class="dropdown-item" href="#">부산</a>
-    <a class="dropdown-item" href="#">그외지역</a>
-  </div>
-</div>
-
-	<div class="dropdown mt-4 mb-2">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="width:120px; text-align:right;">
-    구
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">강서구</a>
-    <a class="dropdown-item" href="#">강남구</a>
-    <a class="dropdown-item" href="#">강북구</a>
-    <a class="dropdown-item" href="#">강동구</a>
-  </div>
-</div>
+	
 
 </div>
 
 		<div class="container">
 		<div>
 			<div class="table table-hover w-70 mt-2">
+				
+			</div>
 		<img src="${root}/resources/images/gym_newgen_01.jpg" class="float-left mr-1" style="width:250px; height: 300px;">
 		<img src="${root}/resources/images/gym_newgen_01.jpg" class="float-left mr-1" style="width:250px; height: 300px;">
 		<img src="${root}/resources/images/gym_newgen_01.jpg" class="float-left mr-1" style="width:250px; height: 300px;">
 
 			</div>
-		</div>
 				
 		<div class="w-27">
 			<div class="form-inline mr-auto ml-auto mb-3 mt-3 text-right">
       		    <input class="form-control" style = "width:280px" type="text" placeholder=" SEARCH ">
-        		<button class="btn btn-dark ml-2" type="submit">🔍</button>
+        		<button class="btn btn-dark ml-2" id="btn_search" type="submit">🔍</button>
+        	
  			</div>
 			
 		<div id="map" style=" height: 300px;"></div>
 		
+			</div>
 			</div>
 <script type="text/javascript">
 //지도 생성하기 : https://apis.map.kakao.com/web/sample/basicMap/
@@ -130,9 +185,11 @@ function mapLevel(level) {
 	map.setLevel(level);
 }//mapLevel
 </script>
+		<div class="container">
 		<table class="table table-hover mt-3 mb-3" >
 			<thead>
 				<tr>
+					<th>번호</th>
 					<th>사업장명</th>
 					<th>지역</th>
 					<th>전화번호</th>
@@ -143,7 +200,6 @@ function mapLevel(level) {
 
 				
 		</div>
-	
 
 	
 	

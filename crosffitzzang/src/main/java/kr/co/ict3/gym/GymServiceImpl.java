@@ -50,4 +50,44 @@ public class GymServiceImpl implements GymService {
 	}
 
 
+
+	@Override
+	public List<GymDTO> searchGymPlace(String searchWord) {
+		
+		List<GymDTO> list4 = dao.searchGymPlace(searchWord);
+		
+		return list4;
+	}
+
+
+
+	@Override
+	public List<DongCodeDTO> selectGugun(String sideCode) {
+		
+		List<DongCodeDTO> list = dao.selectGugun(sideCode);
+		
+		return list;
+	}
+
+
+
+	@Override
+	public List<GymDTO> jpListWithGugun(DongCodeDTO inDto) {
+		
+		List<GymDTO> list = dao.jpListWithGugun(inDto);
+		
+		return list;
+	}
+
+
+
+	@Override
+	public List<DongCodeDTO> selectSido() {
+		
+		List<DongCodeDTO> list = dao.selectSido();
+		
+		return list;
+	}
+
+
 }

@@ -27,9 +27,9 @@ public class GymDAOImpl implements GymDAO {
 	@Override
 	public List<GymDTO> recommend_gym() {
 		
-		List<GymDTO> list = sqlSession.selectList("GymBoardMapper.recommend_gym");
+		List<GymDTO> list4 = sqlSession.selectList("GymBoardMapper.recommend_gym");
 		
-		return list;
+		return list4;
 		
 	}
 
@@ -51,6 +51,48 @@ public class GymDAOImpl implements GymDAO {
 		List<GymDTO> list3 = sqlSession.selectList("GymBoardMapper.realtime_schedule");
 		
 		return list3;
+	}
+
+
+
+	@Override
+	public List<GymDTO> searchGymPlace(String searchWord) {
+		
+		List<GymDTO> list4 = sqlSession.selectList("GymBoardMapper.searchGymPlace", searchWord);
+		
+		return list4;
+	}
+
+
+
+	@Override
+	public List<DongCodeDTO> selectGugun(String sideCode) {
+		
+		List<DongCodeDTO> list = sqlSession.selectList("GymBoardMapper.selectGugun", sideCode);
+		
+		return list;
+	}
+
+
+
+	@Override
+	public List<GymDTO> jpListWithGugun(DongCodeDTO inDto) {
+		
+		
+		List<GymDTO> list = sqlSession.selectList("GymBoardMapper.jpListWithGugun", inDto);
+		
+		return list;
+	}
+
+
+
+	@Override
+	public List<DongCodeDTO> selectSido() {
+		
+		List<DongCodeDTO> list = sqlSession.selectList("GymBoardMapper.selectSido");
+				
+		
+		return list;
 	}
 
 

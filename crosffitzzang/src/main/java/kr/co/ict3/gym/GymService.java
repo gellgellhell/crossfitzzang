@@ -12,4 +12,12 @@ public interface GymService {
 
 	public List<GymDTO> realtime_schedule(GymDTO inDto);
 
+	public List<GymDTO> searchGymPlace(String searchWord);
+
+	public List<DongCodeDTO> selectGugun(String sideCode);
+
+	public List<GymDTO> jpListWithGugun(DongCodeDTO inDto);
+
+	public List<DongCodeDTO> selectSido();
+
 }

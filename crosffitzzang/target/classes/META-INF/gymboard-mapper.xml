@@ -35,4 +35,51 @@
 		FROM best_board
 	</select>
 
+	<select id="searchGymPlace"
+			parameterType="java.lang.String"
+			resultType="kr.co.ict3.gym.GymDTO">
+		SELECT bno, title, location, tell3
+		FROM best_board
+	</select>
+	
+	<select id="selectSido"
+			resultType="kr.co.ict3.gym.DongCodeDTO">
+		SELECT sido_code, sido_name
+		FROM code_sido
+		order by sido_name
+	</select>
+	
+	<select id="selectGugun"
+			parameterType="java.lang.String"
+			resultType="kr.co.ict3.gym.DongCodeDTO">
+		select distinct gugun_code, gugun_name
+		from code_gugun, code_sido
+		where left(gugun_code,2) = left(#{sidoCode},2)
+		order by gugun_name
+	</select>
+	
+	<select id="jpListWithGugun"
+			parameterType="kr.co.ict3.gym.DongCodeDTO"
+			resultType="kr.co.ict3.gym.GymDTO">
+		select bno, title, location
+		, tell3, address3
+		from best_board
+		<choose>
+			<when test="gugun_code == null || gugun_code == '' || gugun_code == 0">
+				WHERE refine_roadnm_addr like concat('%',
+					(SELECT sido_name
+						FROM code_sido
+						WHERE sido_code = #{sido_code})
+					, '%')
+			</when>
+			<otherwise>
+				WHERE refine_roadnm_addr like concat('%',
+					(SELECT gugun_name
+						FROM code_gugun
+						WHERE gugun_code = #{gugun_code})
+					, '%')
+			</otherwise>
+		</choose>
+	</select>	
+
 </mapper>
