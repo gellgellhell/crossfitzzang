@@ -16,7 +16,10 @@
 </head>
 <body data-spy="scroll" data-target=".div" data-offset="50">
 
+	<div class="container">
 	<%@ include file="../home_header.jsp" %>
+	
+	</div>
 	
 		<div class="container clearfix">
 		

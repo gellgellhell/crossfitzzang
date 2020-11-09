@@ -14,7 +14,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<div class="container">
 	<%@ include file="../home_header.jsp" %>
+	
+	</div>
 		<div class="container mt-3">
 			<table class="table table-bordered" style=" height:400px;">
     <thead class="thead-dark">
@@ -22,7 +25,7 @@
        <c:forEach var="list3" items="${board_list3}">
         
         <th>어제 추천 일정(2020.10.28)</th>
-        	시발
+        	시발졸라어렵네
         <th>오늘 추천 일정(2020.10.29)</th>
         <th>내일 추천 일정(2020.10.30)</th>
             <tr>

@@ -98,9 +98,13 @@ $(document).ready(function() {
 
 </head>
 <body>
+	<div class="container">
 	<%@ include file="../home_header.jsp" %>
+	
+	</div>
 		<div class="container form-inline">
-		<div class="form-inline mb-3">
+		
+		<div class="form-inline mb-3 mt-3">
 			<label for="sel_l" class="mr-1">시도 : </label>
 			<select id="sel_l" class="form-control mr-1">
 				<option value="0">시도 선택</option>
@@ -111,7 +115,7 @@ $(document).ready(function() {
 				</c:forEach>
 			</select>
 			
-			<label for="sel_m" class="mr-1">구군 : </label>
+			<label for="sel_m" class="mr-1 mt-3">구군 : </label>
 			<select id="sel_m" class="form-control mr-1">
 				<option value="0">구군 선택</option>
 				<c:forEach var="dto" items="${sidoList}">
