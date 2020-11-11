@@ -10,7 +10,7 @@ public interface GymDAO {
 
 	public List<GymDTO> recommend_schedule();
 
-	public List<GymDTO> realtime_schedule();
+	public List<GymDTO> realtime_schedule(GymDTO inDto);
 
 	public List<GymDTO> searchGymPlace(String searchWord);
 

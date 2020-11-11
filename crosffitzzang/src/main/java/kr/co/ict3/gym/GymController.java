@@ -63,7 +63,7 @@ public class GymController {
 		
 		return "gym/realtime_schedule";
 
-	}//recommend_schedule
+	}//realtime_schedule
 	
 	@RequestMapping(value = "/view", method = RequestMethod.GET)
 	public String gym() {

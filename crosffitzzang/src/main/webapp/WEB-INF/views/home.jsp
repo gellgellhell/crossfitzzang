@@ -14,7 +14,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style> .carousel-inner img {width: 100%; height: 100%;} </style>
+<style> 
+.carousel-inner img {width: 100%; height: 100%;} 
+.aside { width:670;
+ height:220;
+ overflow-x:hidden;
+ overflow-y:auto;
+}
+
+
+</style>
 </head>
 <body data-spy="scroll" data-target=".navbar">
 		
@@ -69,7 +78,7 @@
 </div>
 
 <!-- 실시간 스케쥴 시작 -->
-	<aside class = "float-right w-25">
+	<div class = "float-right w-25" style = " height : 470px; overflow : auto; ">
 		<div class="card">
 			<div class="card-body text-center" >
 				<a href= "#">
@@ -102,20 +111,36 @@
 				</a>
 			</div>
 		</div>
-	</aside>
+		<div class="card">
+			<div class="card-body text-center" >
+				<a href= "#">
+					<h2><Strong> 크로스핏 밤 </Strong></h2>
+					<h4>참여인원 1/4</h4>
+				</a>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-body text-center" >
+				<a href= "#">
+					<h2><Strong> 크로스핏 밤 </Strong></h2>
+					<h4>참여인원 1/4</h4>
+				</a>
+			</div>
+		</div>
+	</div>
 
 <!--  실시간 스케줄 끝 -->
 <h1 class = "text-center w-100">특가 이벤트 운동에미치다 추천 체육관</h1>
 
 	<div class="w3-row">
 <div class="w3-col s4">
-	<img src = "${root}/resources/csf1.jpg" style="width:100%">
+		<img src = "${root}/resources/csf1.jpg" style = "width:100%">
     </div>
     <div class="w3-col s4">
-      <img src = "${root}/resources/csf1.jpg" style="width:100%">
+		<img src = "${root}/resources/csf1.jpg" style = "width:100%">
     </div>
     <div class="w3-col s4">
-      <img src = "${root}/resources/csf1.jpg" style="width:100%">
+		<img src = "${root}/resources/csf1.jpg" style = "width:100%">
     </div>
   </div>
 

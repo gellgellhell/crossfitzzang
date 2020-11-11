@@ -15,39 +15,32 @@
 </head>
 <body>
 	<div class="container">
-	<%@ include file="../home_header.jsp" %>
-	
+		<%@ include file="../home_header.jsp" %>
 	</div>
-		<div class="container mt-3">
-			<table class="table table-bordered" style=" height:400px;">
+	
+	<div class="container mt-3">
+		<table class="table table-bordered" style=" height:400px;">
     <thead class="thead-dark">
-      <tr>
-       <c:forEach var="list3" items="${board_list3}">
-        
-        <th>어제 추천 일정(2020.10.28)</th>
-        	시발졸라어렵네
-        <th>오늘 추천 일정(2020.10.29)</th>
-        <th>내일 추천 일정(2020.10.30)</th>
-            <tr>
-        		<td>
-        		<div>
-        			${list3.bno }
-        			${list3.address3}
-        			${list3.location}
-        			${list3.tell3 }
-        		</div>
-
+		<tr>
+			<th>어제 추천 일정(2020.10.28)</th>
+			<th>오늘 추천 일정(2020.10.29)</th>
+			<th>내일 추천 일정(2020.10.30)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach var="list3" items="${board_list3}">
+			<tr>
+				<td>${list3.bno}</td>
+				<td>${list3.address3}</td>
+				<td>${list3.location}</td>
+				<td>${list3.tell3 }</td>
 			</tr>
-        </c:forEach>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
-			
-			<%@ include file="../home_footer.jsp" %>
-		</div>
-		
-		
+		</c:forEach>
+	</tbody>
+	</table>
+
+	<%@ include file="../home_footer.jsp" %>
+
+	</div>	
 </body>
 </html>

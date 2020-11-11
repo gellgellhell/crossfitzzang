@@ -44,7 +44,7 @@ public class GymServiceImpl implements GymService {
 	@Override
 	public List<GymDTO> realtime_schedule(GymDTO inDto) {
 		
-		List<GymDTO> list3 = dao.realtime_schedule();
+		List<GymDTO> list3 = dao.realtime_schedule(inDto);
 		
 		return list3;
 	}

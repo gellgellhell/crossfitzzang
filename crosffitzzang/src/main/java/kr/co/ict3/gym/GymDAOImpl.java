@@ -46,7 +46,7 @@ public class GymDAOImpl implements GymDAO {
 
 
 	@Override
-	public List<GymDTO> realtime_schedule() {
+	public List<GymDTO> realtime_schedule(GymDTO inDto) {
 		
 		List<GymDTO> list3 = sqlSession.selectList("GymBoardMapper.realtime_schedule");
 		
