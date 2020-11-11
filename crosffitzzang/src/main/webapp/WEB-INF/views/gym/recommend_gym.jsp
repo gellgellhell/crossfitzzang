@@ -27,7 +27,7 @@
 		<div>
 			<section class="col-3 float-left bg-light font-weight-bold nav-link mb-5 mt-3" style="height: 580px">
 					<ul>
-					<div class="label mt-2 mb-2 list-group-item list-group-item-action"><span class="seoul">지역별 베스트 체육관</span></a></div>
+					<div class="label mt-2 mb-2 list-group-item list-group-item-action"><span class="seoul">지역별 베스트 체육관</span></div>
 					<div class="label list-group-item list-group-item-action"><a href=""><span class="kyunggi">서울</span></a></div>
 					<div class="label list-group-item list-group-item-action"><a href=""><span class="kyunggi">경기</span></a></div>
 					<div class="label list-group-item list-group-item-action"><a href=""><span class="kyunggi">부산</span></a></div>
@@ -43,7 +43,7 @@
 	<div class="card float-left ml-1 mb-1" style="width:400px;">
  		 <img class="card-img-top" alt="best1" src="${root}/resources/images/gym_newgen_01.jpg">
  		 <div class="card-body">
-   	<h4 class="card-title">${inDto.title}</h4>
+   	<h4 class="card-title">합정 크로스핏</h4>
     <p class="card-text">20000원</p>
     <a href="${root}/gym/view" class="btn btn-primary">Go to Crossfit</a>
   		</div>

@@ -28,51 +28,60 @@
 <!-- 			</div> -->
 <!-- 			<div class="col-sm-9 float-right"> -->
 				<div class="form-group">
-					<label for="id">아이디 <span id="id_desc"></span></label>
+					<label for="mbr_userid">아이디 <span id="mbr_userid_desc"></span></label>
 					<div class="form-inline">
 						<input type="text" class="form-control inputEng mr-1"
-							id="id" name="id" maxlength="20" size="69">
+							id="mbr_userid" name="mbr_userid" maxlength="20" size="69">
 			<!-- 			<button type="button" id="btn_idchk" -->
 			<!-- 				class="btn btn-primary">ID Check</button> -->
 					</div>
 						<input type="hidden" id="id_chk_yn" value="0">
 				</div>
 					<div class="form-group justify-content-center">
-						<label for="pwd">비밀번호</label>
+						<label for="mbr_pwd">비밀번호</label>
 						<div class="form-inline">
 						<input type="password" class="form-control"
-							id="pwd" name="pwd" maxlength="20" size="69">
+							id="mbr_pwd" name="mbr_pwd" maxlength="20" size="69">
 						</div>
 					</div>
 				<div class="form-group">
-					<label for="pwdre">비밀번호 확인</label>
+					<label for="mbr_pwdre">비밀번호 확인</label>
 					<div class="form-inline">
 					<input type="password" class="form-control "
-						id="pwdre" name="pwdre" maxlength="20" size="69">
+						id="mbr_pwdre" name="mbr_pwdre" maxlength="20" size="69">
 					</div>
 				</div>
+				
 				<div class="form-group">
-					<label for="tel1">전화번호</label>
+					<label for="mbr_name">이름</label>
+					<div class="form-inline">
+						<input type="text" class="form-control mr-1"
+							id="mbr_name" name="mbr_name" maxlength="20" size="69">
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="mbr_tel">전화번호</label>
 					<div class="form-inline">
 						<input type="text" class="form-control mr-1 inputNum"
-							id="tel1" name="tel1"
+							id="mbr_tel1" name="mbr_tel1"
 							size="3" maxlength="3">
 						- <input type="text" class="form-control ml-1 mr-1 inputNum"
-							id="tel2" name="tel2"
+							id="mbr_tel2" name="mbr_tel2"
 							size="4" maxlength="4">
 						- <input type="text" class="form-control ml-1 inputNum"
-							id="tel3" name="tel3"
+							id="mbr_tel3" name="mbr_tel3"
 							size="4" maxlength="4">
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="email1">이메일</label>
+					<label for="mbr_email1">이메일</label>
 					<div class="form-inline">
 						<input type="text" class="form-control mr-1 inputEmail"
-							id="email1" name="email1"
+							id="mbr_email1" name="mbr_email1"
 							maxlength="30">
 						@ <input type="text" class="form-control ml-1 inputEmail"
-							id="email2" name="email2"
+							id="mbr_email2" name="mbr_email2"
 							maxlength="30">
 					</div>
 				</div>

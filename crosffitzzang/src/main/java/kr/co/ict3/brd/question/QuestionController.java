@@ -74,6 +74,13 @@ public class QuestionController {
 	}//list
 
 
+	@RequestMapping(value = "/qdetail1", method = RequestMethod.GET)
+	public String fdtail1() {
+		
+		return "/brd_question/qdetail1";
+		
+	}//qdtail1
+
 }//class
 
 

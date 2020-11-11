@@ -4,29 +4,28 @@
 <div class = "container">
 
 <footer class="jumbotron bg-secondary mt-1 clearfix">
+
 	<div class="col-lg-2 col-md-6 col-sm-12 float-left">
 		<div class="card-body text-white">
-			<a href = "#"> 이용약관 </a>
+			<a href = "${root}/fdetail1"> 이용약관 </a>
 		</div>
 	</div>
+
 	<div class="col-lg-3 col-md-6 col-sm-12 float-left">
 		<div class="card-body text-white">
-			<a href = "#"> 개인정보처리방침 </a>
+			<a href = "${root}/fdetail2"> 개인정보처리방침 </a>
 		</div>
 	</div>
-	<div class="col-lg-3 col-md-6 col-sm-12 float-left">
+
+	<div class="col-lg-3 col-md-6 col-sm-12 float-right">
 		<div class="card-body text-white">
-			<a href = "#"> 위치정보이용약관 </a>
+			<a href = "${root}/fdetail3"> 위치정보이용약관 </a>
 		</div>
 	</div>
-	<div class="col-lg-2 col-md-6 col-sm-12 float-left">
-		<div class="card-body text-white">
-			<a href = "#"> 센터등록요청 </a>
-		</div>
-	</div>
-	<div class="col-lg-2 col-md-6 col-sm-12 float-left">
-		<div class="card-body text-white">
-			<a href = "#"> 문의하기 </a>
+
+	<div class="col-lg-2 col-md-6 col-sm-12 float-right">
+	<div class="card-body text-white">
+			<a id="service" href = "${root}/brd_m2m/list"> 문의하기 </a>
 		</div>
 	</div>
 </footer>

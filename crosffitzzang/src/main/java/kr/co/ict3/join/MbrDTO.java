@@ -2,97 +2,75 @@ package kr.co.ict3.join;
 
 public class MbrDTO {
 
-	private String mno;
-	private String id;
-	private String pwd;
-	private String tel;
-	private String email;
-	private String zone_code;
-	private String addr1;
-	private String addr2;
-	private String join_date;
-	private String biz_reg_no;
-	private String biz_place_nm;
-	private String biz_boss_nm;
-	private String biz_yn;
-
-	public String getMno() {
-		return mno;
+	private String mbr_id;
+	private String mbr_userid;
+	private String mbr_pwd;
+	private String mbr_email;
+	private String mbr_name;
+	private String mbr_tel;
+	private String mbr_zipcode;
+	private String mbr_addr1;
+	private String mbr_addr2;
+	private String mbr_join_date;
+	public String getMbr_id() {
+		return mbr_id;
 	}
-	public void setMno(String mno) {
-		this.mno = mno;
+	public void setMbr_id(String mbr_id) {
+		this.mbr_id = mbr_id;
 	}
-	public String getId() {
-		return id;
+	public String getMbr_userid() {
+		return mbr_userid;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setMbr_userid(String mbr_userid) {
+		this.mbr_userid = mbr_userid;
 	}
-	public String getPwd() {
-		return pwd;
+	public String getMbr_pwd() {
+		return mbr_pwd;
 	}
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	public void setMbr_pwd(String mbr_pwd) {
+		this.mbr_pwd = mbr_pwd;
 	}
-	public String getTel() {
-		return tel;
+	public String getMbr_email() {
+		return mbr_email;
 	}
-	public void setTel(String tel) {
-		this.tel = tel;
+	public void setMbr_email(String mbr_email) {
+		this.mbr_email = mbr_email;
 	}
-	public String getEmail() {
-		return email;
+	public String getMbr_name() {
+		return mbr_name;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setMbr_name(String mbr_name) {
+		this.mbr_name = mbr_name;
 	}
-	public String getZone_code() {
-		return zone_code;
+	public String getMbr_tel() {
+		return mbr_tel;
 	}
-	public void setZone_code(String zone_code) {
-		this.zone_code = zone_code;
+	public void setMbr_tel(String mbr_tel) {
+		this.mbr_tel = mbr_tel;
 	}
-	public String getAddr1() {
-		return addr1;
+	public String getMbr_zipcode() {
+		return mbr_zipcode;
 	}
-	public void setAddr1(String addr1) {
-		this.addr1 = addr1;
+	public void setMbr_zipcode(String mbr_zipcode) {
+		this.mbr_zipcode = mbr_zipcode;
 	}
-	public String getAddr2() {
-		return addr2;
+	public String getMbr_addr1() {
+		return mbr_addr1;
 	}
-	public void setAddr2(String addr2) {
-		this.addr2 = addr2;
+	public void setMbr_addr1(String mbr_addr1) {
+		this.mbr_addr1 = mbr_addr1;
 	}
-	public String getJoin_date() {
-		return join_date;
+	public String getMbr_addr2() {
+		return mbr_addr2;
 	}
-	public void setJoin_date(String join_date) {
-		this.join_date = join_date;
+	public void setMbr_addr2(String mbr_addr2) {
+		this.mbr_addr2 = mbr_addr2;
 	}
-	public String getBiz_reg_no() {
-		return biz_reg_no;
+	public String getMbr_join_date() {
+		return mbr_join_date;
 	}
-	public void setBiz_reg_no(String biz_reg_no) {
-		this.biz_reg_no = biz_reg_no;
-	}
-	public String getBiz_place_nm() {
-		return biz_place_nm;
-	}
-	public void setBiz_place_nm(String biz_place_nm) {
-		this.biz_place_nm = biz_place_nm;
-	}
-	public String getBiz_boss_nm() {
-		return biz_boss_nm;
-	}
-	public void setBiz_boss_nm(String biz_boss_nm) {
-		this.biz_boss_nm = biz_boss_nm;
-	}
-	public String getBiz_yn() {
-		return biz_yn;
-	}
-	public void setBiz_yn(String biz_yn) {
-		this.biz_yn = biz_yn;
+	public void setMbr_join_date(String mbr_join_date) {
+		this.mbr_join_date = mbr_join_date;
 	}
 
-}//class
+}

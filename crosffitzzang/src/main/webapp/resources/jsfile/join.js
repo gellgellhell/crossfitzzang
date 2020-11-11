@@ -1,18 +1,17 @@
 $(document).ready(function() {
-	$("#id").blur(function() {
-		$.get(
-			"./idchk"
-			,{id:$("#id").val()}
+	$("#mbr_userid").blur(function() {
+		$.get(	"./idchk"
+			,{mbr_userid:$("#mbr_userid").val()}
 			,function(data, status){
 				if(status == "success"){
 					if(data == 0){
-						$("#id_desc").text("사용 가능한 아이디 입니다.");
-						$("#id_desc").css("color","blue");
-						$("#id_chk_yn").val("1");
+						$("#mbr_userid_desc").text("사용 가능한 아이디 입니다.");
+						$("#mbr_userid_desc").css("color","blue");
+						$("#mbr_userid_chk_yn").val("1");
 					} else {
-						$("#id_desc").text("이미 사용 중인 아이디 입니다.");
-						$("#id_desc").css("color","red");
-						$("#id_chk_yn").val("0");
+						$("#mbr_userid_desc").text("이미 사용 중인 아이디 입니다.");
+						$("#mbr_userid_desc").css("color","red");
+						$("#mbr_userid_chk_yn").val("0");
 					}
 				} else {
 					alert("잠시 후 다시 시도해 주세요.");
@@ -46,34 +45,38 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$("#btn_join").click(function() {
 
-		if( $.trim( $("#id").val() ) == "" ){
+		if( $.trim( $("#mbr_userid").val() ) == "" ){
 			alert("아이디를 확인해 주세요.");
 			return;
 		}
-		if($("#id_chk_yn").val() == "0"){
+		if($("#mbr_userid_chk_yn").val() == "0"){
 			alert("사용하실 수 없는 아이디 입니다.");
 			return;
 		}
-		if( $.trim( $("#pwd").val() ) == "" ){
+		if( $.trim( $("#mbr_pwd").val() ) == "" ){
 			alert("패스워드를 확인해 주세요.");
 			return;
 		}
-		if( $.trim( $("#pwdre").val() ) == "" ){
+		if( $.trim( $("#mbr_pwdre").val() ) == "" ){
 			alert("패스워드 확인을 입력해 주세요.");
 			return;
 		}
-		if( $("#pwd").val() != $("#pwdre").val() ){
+		if( $("#mbr_pwd").val() != $("#mbr_pwdre").val() ){
 			alert("패스워드와 패스워드 확인이 서로 다릅니다.");
 			return;
 		}
-		if( $.trim( $("#tel1").val() ) == ""
-				|| $.trim( $("#tel2").val() ) == ""
-				|| $.trim( $("#tel3").val() ) == ""){
+		if( $.trim( $("#mbr_name").val() ) == "" ){
+			alert("이름을 확인해 주세요.");
+			return;
+		}
+		if( $.trim( $("#mbr_tel1").val() ) == ""
+				|| $.trim( $("#mbr_tel2").val() ) == ""
+				|| $.trim( $("#mbr_tel3").val() ) == ""){
 			alert("전화번호를 확인해 주세요.");
 			return;
 		}
-		if( $.trim( $("#email1").val() ) == ""
-			|| $.trim( $("#email2").val() ) == ""){
+		if( $.trim( $("#mbr_email1").val() ) == ""
+			|| $.trim( $("#mbr_email2").val() ) == ""){
 			alert("이메일을 확인해 주세요.");
 			return;
 		}
@@ -86,25 +89,21 @@ $(document).ready(function() {
 			return;
 		}
 
-		let tel = $("#tel1").val()
-					+ '-' + $("#tel2").val()
-					+ '-' + $("#tel3").val();
-		let email = $("#email1").val() + '@'
-					+ $("#email2").val();
+		let mbr_tel = $("#mbr_tel1").val()
+					+ '-' + $("#mbr_tel2").val()
+					+ '-' + $("#mbr_tel3").val();
+		let mbr_email = $("#mbr_email1").val() + '@'
+					+ $("#mbr_email2").val();
 		$.post(
 			"./submit"
 			, {
-				id: $("#id").val()
-				, pwd: $("#pwd").val()
-				, tel: tel
-				, email: email
+				mbr_userid: $("#mbr_userid").val()
+				, mbr_pwd: $("#mbr_pwd").val()
+				, mbr_tel: mbr_tel	
+				, mbr_email: mbr_email
 				, zone_code: $("#zone_code").val()
-				, addr1: $("#addr1").val()
-				, addr2: $("#addr2").val()
-				, biz_reg_no : $("#biz_reg_no").val()
-				, biz_place_nm : $("#biz_place_nm").val()
-				, biz_boss_nm : $("#biz_boss_nm").val()
-				, biz_yn : $("#biz_member").prop("checked")
+				, mbr_addr1: $("#mbr_addr1").val()
+				, mbr_addr2: $("#mbr_addr2").val()
 			}
 			, function(data, status) {
 				if(status == "success") {

@@ -115,7 +115,7 @@ $(document).ready(function() {
 				</c:forEach>
 			</select>
 			
-			<label for="sel_m" class="mr-1 mt-3">구군 : </label>
+			<label for="sel_m" class="mr-1">구군 : </label>
 			<select id="sel_m" class="form-control mr-1">
 				<option value="0">구군 선택</option>
 				<c:forEach var="dto" items="${sidoList}">

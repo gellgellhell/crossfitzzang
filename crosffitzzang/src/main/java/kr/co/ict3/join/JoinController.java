@@ -1,6 +1,6 @@
 package kr.co.ict3.join;
 
-	import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,7 +30,7 @@ public class JoinController {
 	@ResponseBody
 	@RequestMapping(value="/submit", method=RequestMethod.POST)
 	public String formSubmit(MbrDTO inDto) {
-	int insertCnt = service.formSubmit(inDto);
+		int insertCnt = service.formSubmit(inDto);
 		return ""+insertCnt;
 	}//formSubmit
 	

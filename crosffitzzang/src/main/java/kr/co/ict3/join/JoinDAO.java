@@ -10,8 +10,6 @@ public interface JoinDAO {
 
 	public int pwdCheck(MbrDTO inDto);
 
-	public int insertBizMember(MbrDTO inDto);
-
 	public void updatembrinfo(MbrDTO inDto);
 
 }//interface

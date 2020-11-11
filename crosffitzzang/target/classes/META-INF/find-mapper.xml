@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="FindMapper">
+
+	<select id="idFind"
+			parameterType="kr.co.ict3.join.MbrDTO"
+			resultType="java.lang.String">
+		select mbr_userid from mbr where mbr_name = #{mbr_name} and mbr_email = #{mbr_email}
+	</select>
+
+	<select id="pwdFind"
+			parameterType="kr.co.ict3.join.MbrDTO"
+			resultType="java.lang.String">
+		select mbr_pwd from mbr where mbr_userid = #{mbr_userid} and mbr_name = #{mbr_name} and mbr_email = #{mbr_email} 
+	</select>
+	
+</mapper>
