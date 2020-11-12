@@ -26,6 +26,8 @@
 		, tell3, address3, file3
 		from best_board
 		where bno = #{bno}
+		AND biz_garo LIKE CONCAT('%',#{bno1},'%')
+		OR biz_garo LIKE CONCAT('%',#{bno1},'%')
 	</select>
 	
 	<select id="realtime_schedule"
@@ -62,7 +64,7 @@
 			parameterType="kr.co.ict3.gym.DongCodeDTO"
 			resultType="kr.co.ict3.gym.GymDTO">
 		select bno, title, location
-		, tell3, address3
+		, tell3, address3, biz_garo, biz_sero
 		from best_board
 		<choose>
 			<when test="gugun_code == null || gugun_code == '' || gugun_code == 0">

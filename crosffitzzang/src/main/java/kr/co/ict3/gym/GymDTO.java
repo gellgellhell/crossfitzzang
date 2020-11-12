@@ -11,6 +11,22 @@ public class GymDTO {
 	private String address3;
 	private String content;
 	private String file3;
+	private String biz_garo;
+	private String biz_sero;
+	
+	
+	public String getBiz_garo() {
+		return biz_garo;
+	}
+	public void setBiz_garo(String biz_garo) {
+		this.biz_garo = biz_garo;
+	}
+	public String getBiz_sero() {
+		return biz_sero;
+	}
+	public void setBiz_sero(String biz_sero) {
+		this.biz_sero = biz_sero;
+	}
 	public String getBno() {
 		return bno;
 	}

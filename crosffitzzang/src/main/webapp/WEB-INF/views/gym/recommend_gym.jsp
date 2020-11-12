@@ -40,7 +40,7 @@
 		<section class="border mt-3 pt-4 pb-5"
 					style="overflow: hidden;">
 					
-	<div class="card float-left ml-1 mb-1" style="width:400px;">
+	<div class="card float-left ml-1 mb-1" style="width:400px; height: 300px;">
  		 <img class="card-img-top" alt="best1" src="${root}/resources/images/gym_newgen_01.jpg">
  		 <div class="card-body">
    	<h4 class="card-title">합정 크로스핏</h4>
@@ -49,28 +49,28 @@
   		</div>
 		</div>
 		
-		<div class="card float-left ml-1 mb-1" style="width:400px;">
- 		 <img class="card-img-top" alt="best1" src="${root}/resources/images/gym_newgen_01.jpg">
+		<div class="card float-left ml-1 mb-1" style="width:400px; height: 300px;">
+ 		 <img class="card-img-top" alt="best1" src="${root}/resources/images/gym_newgen_02.jpg">
  		 <div class="card-body">
-   	<h4 class="card-title">합정 크로스핏</h4>
+   	<h4 class="card-title">크로스핏 뉴젠</h4>
+    <p class="card-text">15000원</p>
+    <a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
+  		</div>
+		</div>
+		
+		<div class="card float-left  ml-1 mb-1" style="width:400px; height: 300px;">
+ 		 <img class="card-img-top" alt="best1" src="${root}/resources/images/gym_newgen_03.jpg">
+ 		 <div class="card-body">
+   	<h4 class="card-title">구로 크로스핏</h4>
     <p class="card-text">20000원</p>
     <a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
   		</div>
 		</div>
 		
-		<div class="card float-left  ml-1 mb-1" style="width:400px;">
- 		 <img class="card-img-top" alt="best1" src="${root}/resources/images/gym_newgen_01.jpg">
+		<div class="card float-left  ml-1 mb-1" style="width:400px; height: 300px;">
+ 		 <img class="card-img-top" alt="best1" src="${root}/resources/images/gym_newgen_04.jpg">
  		 <div class="card-body">
-   	<h4 class="card-title">합정 크로스핏</h4>
-    <p class="card-text">20000원</p>
-    <a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
-  		</div>
-		</div>
-		
-		<div class="card float-left  ml-1 mb-1" style="width:400px;">
- 		 <img class="card-img-top" alt="best1" src="${root}/resources/images/gym_newgen_01.jpg">
- 		 <div class="card-body">
-   	<h4 class="card-title">합정 크로스핏</h4>
+   	<h4 class="card-title">크로스핏 클리어</h4>
     <p class="card-text">20000원</p>
     <a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
   		</div>

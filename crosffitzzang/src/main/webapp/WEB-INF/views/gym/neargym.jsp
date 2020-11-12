@@ -21,9 +21,9 @@ $(document).ready(function() {
 			"${root}/gymrest/searchgym1"
 			, { searchWord : $("#search_word").val() }
 			, function(data, status) {
-				$("tbody").empty();
+				$("#tbody2").empty();
 				$.each(data, function(index, dto) {
-					$("tbody").append(
+					$("#tbody2").append(
 					 "<tr>"
 					+ "<td>" + dto.bno + "</td>"
 					+ "<td>" + dto.title + "</td>"
@@ -84,7 +84,8 @@ $(document).ready(function() {
 							+ "<td>" + dto.tell3 + "</td>"
 						+ "</tr>"
 					);//append
-
+					displayMarker(dto.biz_garo
+							, dto.biz_sero);
 				});//each
 				mapLevel(8);
 			}//function
@@ -124,7 +125,7 @@ $(document).ready(function() {
 					</option>
 				</c:forEach>
 			</select>
-			
+				<button class="btn btn-dark ml-2" id="btn_search" type="submit">🔍</button>
 		</div>
 		
 	
@@ -132,27 +133,31 @@ $(document).ready(function() {
 </div>
 
 		<div class="container">
+		
 		<div>
 			<div class="table table-hover w-70 mt-2">
 				
 			</div>
-		<img src="${root}/resources/images/gym_newgen_01.jpg" class="float-left mr-1" style="width:250px; height: 300px;">
-		<img src="${root}/resources/images/gym_newgen_01.jpg" class="float-left mr-1" style="width:250px; height: 300px;">
-		<img src="${root}/resources/images/gym_newgen_01.jpg" class="float-left mr-1" style="width:250px; height: 300px;">
-
+		<img src="${root}/resources/images/gym_newgen_01.jpg" class="float-left mr-1" style="width:400px; height: 300px;">
+		<div class = "float-left">
+	<div class = "width:400px; height:450px;">
+		<h2 class = "text-center"><th>안내사항</th></h2>
+		<table class = "table table-hover text text-muted text-left">
+		<tr><td>운동복은 각자 챙겨주셔야합니다.</td></tr>
+		<tr><td>운동시간 10분전에는 준비 부탁드립니다.</td></tr>
+		<tr><td>코로나로 인하여 마스크 필수입니다.</td></tr>
+		<tr><td><a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a></td></tr>	
+		</table>
+	</div>
+		</div>	
 			</div>
 				
-		<div class="w-27">
-			<div class="form-inline mr-auto ml-auto mb-3 mt-3 text-right">
-      		    <input class="form-control" style = "width:280px" type="text" placeholder=" SEARCH ">
-        		<button class="btn btn-dark ml-2" id="btn_search" type="submit">🔍</button>
-        	
- 			</div>
+
 			
 		<div id="map" style=" height: 300px;"></div>
 		
 			</div>
-			</div>
+
 <script type="text/javascript">
 //지도 생성하기 : https://apis.map.kakao.com/web/sample/basicMap/
 var mapContainer = document.getElementById('map'),
@@ -199,7 +204,7 @@ function mapLevel(level) {
 					<th>전화번호</th>
 				</tr>
 			</thead>
-			<tbody></tbody>
+			<tbody id="tbody2"></tbody>
 		</table>
 
 				
