@@ -37,7 +37,16 @@ public class JoinDAOImpl implements JoinDAO {
 		return pwdYN;
 	}//pwdCheck
 
-
+	@Override
+	public int insertBizMember(MbrDTO inDto) {
+		System.out.println(inDto.getBiz_yn());
+		System.out.println(inDto.getBiz_boss_nm());
+		System.out.println(inDto.getBiz_place_nm());
+		System.out.println(inDto.getBiz_reg_no());
+		int successCnt
+		= sqlSession.insert("JoinMapper.insertBizMember", inDto);
+		return successCnt;
+	}//insertBizMember
 
 	@Override
 	public void updatembrinfo(MbrDTO inDto) {

@@ -21,8 +21,8 @@ public class FindRestController {
 
 	@RequestMapping(value = "/id_find", method = RequestMethod.POST)
 	public String idFind(MbrDTO inDto, HttpSession session) {
-		logger.info(inDto.getMbr_name());
-		logger.info(inDto.getMbr_email());
+		logger.info(inDto.getName());
+		logger.info(inDto.getEmail());
 		String id = service.idFind(inDto);
 		logger.info(id);
 		return id;
@@ -30,9 +30,9 @@ public class FindRestController {
 	
 	@RequestMapping(value = "/pwd_find", method = RequestMethod.POST)
 	public String pwdFind(MbrDTO inDto, HttpSession session) {
-		logger.info(inDto.getMbr_userid());
-		logger.info(inDto.getMbr_name());
-		logger.info(inDto.getMbr_email());
+		logger.info(inDto.getId());
+		logger.info(inDto.getName());
+		logger.info(inDto.getEmail());
 		String pwd = service.pwdFind(inDto);
 		logger.info(pwd);
 		return pwd;

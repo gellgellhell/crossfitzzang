@@ -33,7 +33,7 @@
 					<div class="form-inline">
 						<input type="checkbox" class="form-control mr-1 text-left"
 							id="check1" name="check1">
-						<img src="${root}/resources/images/gym_newgen_01.jpg" width="150px">
+						<img src="${root}/resources/bag/bag_shoes.jpg" width="150px">
 					</div>
 				</td>
 				<td>

@@ -12,25 +12,32 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style type="text/css">
+
+</style>
 </head>
 <body>
 
 	<div class="container">
+	
 		<%@ include file="../home_header.jsp" %>
-		<h1 class="text-muted text-center mt-3 mb-3">
-			공지게시판</h1>
-			<ul class="pagination justify-content-center mt-5 mb-5">
+		<br>
+		<h1 class="text-muted text-center mt-3 mb-3">공지 게시판</h1>
+		<hr>
+
+		<!-- search start -->
+		<ul class="pagination justify-content-center mt-5 mb-5">
 			<li class="mr-1">
 				<select id="search_option" class="form-control">
 					<option value="title"
-<c:if test="${search_dto.search_option == 'title'}">
-	selected="selected"
-</c:if>
+		<c:if test="${search_dto.search_option == 'title'}">
+			selected="selected"
+		</c:if>
 					> 제 목 </option>
 					<option value="writer"
-<c:if test="${search_dto.search_option == 'writer'}">
-	selected="selected"
-</c:if>
+		<c:if test="${search_dto.search_option == 'writer'}">
+			selected="selected"
+		</c:if>
 					> 작 성 자 </option>
 				</select>
 			</li>
@@ -41,14 +48,15 @@
 			</li>
 			<li>
 				<button type="button" id="btn_search"
-						class="btn btn-primary">
-					s e a r c h </button>
+						class="btn btn-dark"> 검색 </button>
 			</li>
 		</ul>
 		<script type="text/javascript">
+		
 		$(document).ready(function() {
+		
 			$("#btn_search").click(function() {
-				location.href="${root}/brd_event/list"
+				location.href="${root}/board/list"
 					+"?search_option="+$("#search_option").val()
 					+"&search_word="+$("#search_word").val()
 			});//click
@@ -57,8 +65,14 @@
 					$("#btn_search").click();
 				}
 			});//keyup
+			
+			$("#btn_wform").click(function() {
+				location.href="${root}/notice/wform";
+			});//click
 		});//ready
+		
 		</script>
+		<!-- search end -->
 		<table class="table table-hover">
 			<thead>
 				<tr>
@@ -69,29 +83,33 @@
 					<th>작성일</th>
 				</tr>
 			</thead>
-			<tbody>
-			
 			<c:forEach var="dto" items="${board_list}">
 				<tr>
 					<td>${dto.bno}</td>
-					<td>${dto.title}</td>
+					<td>
+					<a href="${pageContext.request.contextPath}/notice/detail?bno=${dto.bno}">
+					${dto.title}
+					</a>
+					</td>
 					<td>${dto.writer}</td>
 					<td>${dto.view_cnt}</td>
 					<td>${dto.write_date}</td>
 				</tr>
 			</c:forEach>
-			</tbody>
 		</table>
-			<c:set var="search_uri1"
+
+		<!-- paging start -->
+		
+		<c:set var="search_uri1"
 			value="&search_option=${search_dto.search_option}" />
 		<c:set var="search_uri2"
 			value="&search_word=${search_dto.search_word}" />
-
+	
 		<ul class="pagination justify-content-center">
 <c:if test="${beginPage > 10}">
 <li class="page-item">
 	<a class="page-link"
-		href="#?reqPage=${beginPage-1}${search_uri1}${search_uri2}">
+		href="${root}/board/list?reqPage=${beginPage-1}${search_uri1}${search_uri2}">
 		Before
 	</a>
 </li>
@@ -101,7 +119,7 @@
 					begin="${beginPage}" end="${endPage}">
 <li class="page-item">
 	<a class="page-link"
-		href="#?reqPage=${page_num}${search_uri1}${search_uri2}">
+		href="${root}/board/list?reqPage=${page_num}${search_uri1}${search_uri2}">
 		${page_num}
 	</a>
 </li>
@@ -109,20 +127,26 @@
 
 <c:if test="${endPage < maxPage}">
 <li class="page-item">
-	<a class="page-link"
-		href="#?reqPage=${endPage+1}${search_uri1}${search_uri2}">
+	<a class="page-link "
+		href="${root}/board/list?reqPage=${endPage+1}${search_uri1}${search_uri2}">
 		Next
 	</a>
 </li>
 </c:if>
 		</ul>
+		<!-- paging end -->
+		
+		<hr>
+				<div class="text-right">
+			<button class="btn btn-dark"
+				type="button" id="btn_wform"> 글 쓰기 </button>
+		</div>
+	<br>
 	</div>
+	
 	<%@ include file="../home_footer.jsp" %>
 </body>
 </html>
-
-
-
 
 
 

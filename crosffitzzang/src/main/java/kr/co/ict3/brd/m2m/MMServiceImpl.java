@@ -54,6 +54,32 @@ public class MMServiceImpl implements MMService {
 		return totlistCnt;
 	}//totlistCnt
 
+	@Override
+	public int delete(MMDTO inDto) {
+		int pwdCnt = dao.chkPwd(inDto);
+		if(pwdCnt == 0) {
+			return -1;
+		}
+		int deleteCnt = dao.delete(inDto);
+		return deleteCnt;
+	}//delete
+
+	@Override
+	public int update(MMDTO inDto) {
+		int pwdCnt = dao.chkPwd(inDto);
+		if(pwdCnt == 0) {
+			return -1;
+		}
+		int updateCnt = dao.update(inDto);
+		return updateCnt;
+	}//update
+
+	@Override
+	public int write(MMDTO inDto) {
+		int writeCnt = dao.write(inDto);
+		return writeCnt;
+	}//write
+
 }//class
 
 

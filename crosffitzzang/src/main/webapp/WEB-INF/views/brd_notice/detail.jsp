@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> 공지 게시판 </title>
+<title>공지게시판상세</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -18,16 +18,15 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$.get(
-			"#"
+			"${root}/brdnotice/detail/${bno}"
 			, {}
 			, function(data, status) {
-				//alert(data); alert(status);
 				$("#bno").val(data.bno);
 				$("#td_title").text(data.title);
 				$("#td_writer").text(data.writer);
 				$("#td_like_cnt").text(data.like_cnt);
 				$("#td_unlike_cnt").text(data.unlike_cnt);
-				$("#td_cnts").text(data.cnts);
+				$("#td_cnts").html(data.cnts);
 				viewHanjul();
 			}//function
 		);//get
@@ -39,7 +38,7 @@
 				whoClick = "heart";
 			}
 			$.ajax({
-				url : "#/"+whoClick
+				url : "${root}/brdnotice/${bno}/"+whoClick
 				, type : "put"
 				, success : function(data, status) {
 					if(data > 0) {
@@ -74,16 +73,15 @@
 			$.ajax({
 				type : "delete"
 				, contentType : "application/json"
-				, url : "#"
+				, url : "${root}/brdnotice"
 				, data : JSON.stringify({
 							bno : $("#bno").val()
 							, pwd : $("#pwd").val()
 				})
 				, success : function(data, status) {
-					//alert(data);
 					if(data == 1) {
 						alert("게시글이 삭제 되었습니다.");
-location.href="#";
+location.href="${root}/board/list";
 					} else if(data == -1) {
 						alert("비밀번호가 올바르지 않습니다.");
 					} else {
@@ -95,29 +93,32 @@ location.href="#";
 
 		$("#btn_wform").click(function() {
 location.assign(
-	"#?bno="
+	"${root}/notice/uform?bno="
 		+ $("#bno").val()
 );//assign
 		});//click
-
+		$("#btn_back").click(function() {
+			location.href="${root}/board/list";
+		});//click
 	});//ready
 	</script>
 	<div class="container">
 		<%@ include file="../home_header.jsp" %>
+		<br>
 		<h1 class="text-muted text-center mt-3 mb-3">
-			이벤트게시판 상세보기	</h1>
-		<div class="form-inline mb-3 float-right">
+			공지게시판 상세보기	</h1>
+			<br>
+		<div class="form-inline mb-4 float-right">
 			<input type="hidden" id="bno">
 			<input type="text" id="pwd"
 				class="form-control mr-1"
-				placeholder="input password for delete">
+				placeholder="비밀번호를 입력하세요.">
 			<button type="button" id="btn_delete"
-				class="btn btn-danger mr-1">
-				D E L E T E </button>
+				class="btn btn-danger mr-1"> 글 삭제 </button>
 			<button type="button" id="btn_wform"
-				class="btn btn-primary">
-				U P D A T E </button>
+				class="btn btn-dark"> 글 수정 </button>
 		</div>
+		<br>
 		<table class="table table-hover mb-5">
 			<colgroup>
 				<col width="25%">
@@ -143,7 +144,15 @@ location.assign(
 				<th class="text-right">내용</th>
 				<td id="td_cnts"></td>
 			</tr>
+			
 		</table>
+		<br>
+		<br>
+		<hr>
+		<div class="text-right">
+					<button type="button" id="btn_back"
+				class="btn btn-dark">목록가기</button>
+		</div>
 		<!-- 한줄 댓글 달기 start -->
 		<table class="table table-hover mt-5 mb-5">
 			<colgroup>
@@ -178,10 +187,12 @@ location.assign(
 								id="pwdTxt" type="text">
 					</td>
 					<td>
+						<div class="text-right">
 						<button type="button" id="btn_hanjul"
-								class="btn btn-primary">
-								댓 글 달 기
+								class="btn btn-dark">
+								댓글쓰기
 						</button>
+						</div>
 					</td>
 				</tr>
 			</tbody>
@@ -191,8 +202,9 @@ location.assign(
 		<script type="text/javascript">
 		$(document).ready(function() {
 			$("#btn_hanjul").click(function() {
+				//writer cnts pwd 공백 check
 				$.post(
-					"${root}/brd_notice/insHanjul"
+					"${root}/brdnotice/insHanjul"
 					, {
 						bno : $("#bno").val()
 						, writer : $("#writerTxt").val()
@@ -219,7 +231,7 @@ location.assign(
 	<script type="text/javascript">
 	function viewHanjul() {
 		$.get(
-			"#"
+			"${root}/brdnotice/viewHanjul"
 			, { bno : $("#bno").val() }
 			, function(data, status) {
 				if(status == "success") {
@@ -243,6 +255,7 @@ location.assign(
 	</script>
 	<!-- 한줄 댓글 보기 end -->
 	</div>
+		<%@ include file="../home_footer.jsp" %>
 </body>
 </html>
 

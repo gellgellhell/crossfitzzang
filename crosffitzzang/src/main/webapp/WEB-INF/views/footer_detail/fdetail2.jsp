@@ -29,7 +29,7 @@ $(document).ready(function() {
 				<br>
 	
 	<div class="container border border-muted rounded mt-2 ml-1"
-			style="width: 100%; height: 400px; overflow: auto">
+			style="width: 100%; height: 470px; overflow: auto">
 				<td>
 				주식회사 ict3(이하 "회사")는 고객의 개인정보를 중요시하며, 개인정보의 보호와 관련하여 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 및 「개인정보 보호법」 등 관련법 상의 개인정보 보호 규정을 준수하고 있으며, 회사는 고객이 회사의 개인정보 처리방침의 내용에 대하여 「동의」버튼 또는 「취소」버튼을 클릭할 수 있는 절차를 마련하여, 「동의」버튼을 클릭하면 개인정보 수집 및 이용 등 아래 개인정보 처리방침에 대해 동의한 것으로 봅니다. 
 				
@@ -161,7 +161,9 @@ $(document).ready(function() {
 
 				</td>
 				</div>
-			<br><br>
+				<br><br>
+				<hr>
+				
 			<div class="float-right mb-3">
 				<button type="button" id="btn_back"
 						class="btn btn-dark text-white">돌아가기</button>

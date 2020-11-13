@@ -30,19 +30,19 @@
 			<tr>
 				<td><h2>크로스핏 밤</h2>
 				<h5>- 18:00 ~ 19:00</h5>
-				<h5>- 박스 크로스핏</h5>
+				<h5>- Single DB Split Jerk 8 8 </h5>
+				<h5>- Single DB Good morning Excercise 10 </h5>
+				<a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
+				</td>
+				<td><h2>뉴트로젠</h2>
+				<h5>- 18:00 ~ 19:00</h5>
+				<h5>- Shoulder To Overhead ( Split Jerk 를 메인으로 )</h5>
 				<h5>- 함께하는 줄타기</h5>
 				<a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
 				</td>
-				<td><h2>크로스핏 밤</h2>
+				<td><h2>My CrossFit</h2>
 				<h5>- 18:00 ~ 19:00</h5>
-				<h5>- 박스 크로스핏</h5>
-				<h5>- 함께하는 줄타기</h5>
-				<a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
-				</td>
-				<td><h2>크로스핏 밤</h2>
-				<h5>- 18:00 ~ 19:00</h5>
-				<h5>- 박스 크로스핏</h5>
+				<h5>- 10R E90MOM - 라운드별 교체</h5>
 				<h5>- 함께하는 줄타기</h5>
 				<a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
 				</td>
@@ -50,42 +50,42 @@
 			
 			<tr>
 				<td><h2>크로스핏 밤</h2>
-				<h5>- 18:00 ~ 19:00</h5>
-				<h5>- 박스 크로스핏</h5>
-				<h5>- 함께하는 줄타기</h5>
+				<h5>- 19:00 ~ 20:00</h5>
+				<h5>- Good moring Excercise & SQ </h5>
+				<h5>- 2round of 50% 10 Back SQ 10sec hold x 2Sets  </h5>
 				<a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
 				</td>
 				<td><h2>크로스핏 밤</h2>
-				<h5>- 18:00 ~ 19:00</h5>
+				<h5>- 19:00 ~ 20:00</h5>
 				<h5>- 박스 크로스핏</h5>
-				<h5>- 함께하는 줄타기</h5>
+				<h5>- 4R 40Sec on 20sec Rest</h5>
 				<a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
 				</td>
 				<td><h2>크로스핏 밤</h2>
-				<h5>- 18:00 ~ 19:00</h5>
-				<h5>- 박스 크로스핏</h5>
-				<h5>- 함께하는 줄타기</h5>
+				<h5>- 19:00 ~ 20:00</h5>
+				<h5>-  * For time Record WOD</h5>
+				<h5>-  15 Thruster, 15/12kcal ROW</h5>
 				<a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
 				</td>
 			</tr>
       
       		<tr>
       			<td><h2>크로스핏 밤</h2>
-				<h5>- 18:00 ~ 19:00</h5>
-				<h5>- 박스 크로스핏</h5>
-				<h5>- 함께하는 줄타기</h5>
+				<h5>- 20:00 ~ 21:00</h5>
+				<h5>- 20min amrap team of 2</h5>
+				<h5>- Row 130kcal or Assualt bike 100kcal</h5>
 				<a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
 				</td>
       			<td><h2>크로스핏 밤</h2>
-				<h5>- 18:00 ~ 19:00</h5>
-				<h5>- 박스 크로스핏</h5>
-				<h5>- 함께하는 줄타기</h5>
+				<h5>- 20:00 ~ 21:00</h5>
+				<h5>* E1 Strength Program</h5>
+				<h5>- Back Squat 20(빈바) - 10 - 8 - 5 - 1 - 1</h5>
 				<a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
 				</td>
       			<td><h2>크로스핏 밤</h2>
-				<h5>- 18:00 ~ 19:00</h5>
-				<h5>- 박스 크로스핏</h5>
-				<h5>- 함께하는 줄타기</h5>
+				<h5>- 20:00 ~ 21:00</h5>
+				<h5>- 21min amrap team of 2</h5>
+				<h5>-  - Battle rope 1min & Row 28kcal  </h5>
 				<a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
 				</td>
       		</tr>

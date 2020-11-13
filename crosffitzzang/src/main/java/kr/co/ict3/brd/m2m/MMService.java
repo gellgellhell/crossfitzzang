@@ -18,6 +18,12 @@ public interface MMService {
 
 	public int totlistCnt(SearchDTO inDto);
 
+	public int delete(MMDTO inDto);
+
+	public int update(MMDTO inDto);
+
+	public int write(MMDTO inDto);
+
 }//class
 
 

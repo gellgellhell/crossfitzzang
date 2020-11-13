@@ -7,10 +7,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Controller
 @RequestMapping(value="/join")
 public class JoinController {
+
+	private static final Logger logger
+	= LoggerFactory.getLogger(JoinController.class);
 
 	@Autowired
 	private JoinService service;
@@ -30,7 +35,9 @@ public class JoinController {
 	@ResponseBody
 	@RequestMapping(value="/submit", method=RequestMethod.POST)
 	public String formSubmit(MbrDTO inDto) {
+		logger.info(inDto.getName());
 		int insertCnt = service.formSubmit(inDto);
+		logger.info(""+insertCnt);
 		return ""+insertCnt;
 	}//formSubmit
 	

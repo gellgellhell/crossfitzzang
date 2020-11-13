@@ -12,6 +12,7 @@
 
 <%@ include file="./join/login_modal.jsp" %>
 
+
 <nav class = "navbar navbar-expand-sm bg-danger navbar-dark rounded">
   <!-- 로고 시작 -->
   		<a class="navbar-brand ml-5" href="${root}">
@@ -39,15 +40,17 @@
 		
 		<c:otherwise>
 			<li class="nav-item">
-				<a class="nav-link text-dark font-weight-bold" data-toggle="modal" data-target="#login_modal"
-				href="#">로그인</a>
-			</li>
-		
-			<li class="nav-item">
 				<a class="nav-link text-dark font-weight-bold"
 				href="${root}/join/register">회원가입</a>
 			</li>
-		</c:otherwise>
+			
+			<li class="nav-item">
+				<a class="nav-link text-dark font-weight-bold" data-toggle="modal" data-target="#login_modal"
+				href="#">로그인</a>
+			</li>
+            
+	
+			</c:otherwise>
 		</c:choose>
 	</ul>
 </nav>
@@ -77,17 +80,16 @@
 					<div class="w3-dropdown-hover">
 						<button class="w3-button bg-secondary text-white font-weight-bold">게시판</button>
 							<div class="w3-dropdown-content w3-bar-block w3-border">
-								<a href="${root}/brd_notice/list_search" class="w3-bar-item w3-button">공지 게시판</a>
-								<a href="${root}/brd_event/list_search" class="w3-bar-item w3-button">이벤트 게시판</a>
-								<a href="${root}/brd_mbr/list_search" class="w3-bar-item w3-button">회원 게시판</a>
+								<a href="${root}/board/list" class="w3-bar-item w3-button">공지 게시판</a>
+								<a href="${root}/event/list" class="w3-bar-item w3-button">이벤트 게시판</a>
+								<a href="${root}/mbr/list" class="w3-bar-item w3-button">회원 게시판</a>
 							</div>
 					</div>
 
 					<div class="w3-dropdown-hover">
 						<button class="w3-button bg-secondary text-white font-weight-bold">고객센터</button>
 							<div class="w3-dropdown-content w3-bar-block w3-border">
-								<a href="${root}/brd_m2m/list" class = "w3-bar-item w3-button">1대1 문의사항</a>
-								<a href="${root}/brd_qna/list" class = "w3-bar-item w3-button"> 질문 및 건의사항 </a>
+								<a href="${root}/m2m/list" class = "w3-bar-item w3-button">1:1 문의사항</a>
 								<a href="${root}/brd_question/list" class = "w3-bar-item w3-button">자주 묻는 질문</a>
 							</div>
 					</div>

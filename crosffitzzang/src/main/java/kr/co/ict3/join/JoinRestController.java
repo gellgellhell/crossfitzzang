@@ -18,7 +18,7 @@ public class JoinRestController {
 	public int login(MbrDTO inDto, HttpSession session) {
 		int mbrNo = service.login(inDto);
 		if(mbrNo > 0) {
-			inDto.setMbr_id(""+mbrNo);
+			inDto.setMno(""+mbrNo);
 			session.setAttribute("login_dto", inDto);
 		}
 		return mbrNo;

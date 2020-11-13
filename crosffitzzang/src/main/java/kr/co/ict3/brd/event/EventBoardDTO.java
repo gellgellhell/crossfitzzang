@@ -1,5 +1,7 @@
 package kr.co.ict3.brd.event;
 
+import org.springframework.web.multipart.MultipartFile;
+
 /*
  * 편의를 위한 구분으로, 반드시 지켜야하는 규칙은 없다.
  * Table DTO : DB Table의 속성들을 변수로 갖는 DTO.
@@ -16,6 +18,8 @@ public class EventBoardDTO {//alt + shift + a
 	private String like_cnt;
 	private String unlike_cnt;
 	private String write_date;
+	private MultipartFile file_up;
+	private String up_file_path;
 
 	public String getBno() {//메뉴 source > getters & setters
 		return bno;
@@ -71,12 +75,17 @@ public class EventBoardDTO {//alt + shift + a
 	public void setWrite_date(String write_date) {
 		this.write_date = write_date;
 	}
+	public MultipartFile getFile_up() {
+		return file_up;
+	}
+	public void setFile_up(MultipartFile file_up) {
+		this.file_up = file_up;
+	}
+	public String getUp_file_path() {
+		return up_file_path;
+	}
+	public void setUp_file_path(String up_file_path) {
+		this.up_file_path = up_file_path;
+	}
 
-}
-
-
-
-
-
-
-
+}//class

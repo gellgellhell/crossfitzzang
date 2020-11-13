@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>자유게시판</title>
+<title>회원게시판수정</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -18,67 +18,88 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$.get(
-"${root}/brd_mbr/detail/${bno}" //조회.
-				, {} //bno
-				, function(data, status) {
-					$("#title").val(data.title);
-					$("#writer").val(data.writer);
-					$("#cnts").val(data.cnts);
-				}//function //input에 data 넣기.
+			"${root}/brdmbr/detail/${bno}" //조회.
+			, {}
+			, function(data, status) {
+				$("#title").val(data.title);
+				$("#writer").val(data.writer);
+				$("#cnts").val(data.cnts);
+
+				let tmp = data.up_file_path;
+				if($.trim(tmp) != ""){
+					tmp = tmp.substring(
+						tmp.lastIndexOf("/") + 1, tmp.length);
+					$("#td_file").html(
+						tmp
+						+" <button type='button' id='btn_file_del'"
+						+" class='btn-small btn-danger'"
+						+"> X </buttom>"
+					);//html
+					$("#btn_file_del").on("click", function() {
+						btnFileDeleteClicked(data.up_file_path);
+					});//on
+					$("#file_btn").css("display", "none");
+				} else {
+					$("#file_show").css("display", "none");
+				}
+			}//function //input에 data 넣기.
 		);//get
 	});//ready
+	function btnFileDeleteClicked(fileName) {
+		$.get(
+			"${root}/brdmbr/file_delete"
+			, { bno : $("#bno").val()
+				, up_file_path : fileName }
+			, function(data, status) {
+				if(data == "1"){
+					$("#file_btn").css("display", "block");
+					$("#file_show").css("display", "none");
+				}
+			}//function
+		);//get
+	}//btnFileDeleteClicked
 	</script>
-	<div class = "container">
-		<%@ include file = "../home_header.jsp" %>
-		<h1 class = "text-muted text-center mt-3 mb-3">
-			공지게시판 수정 </h1>
-		<table class = "table table-hover">
-			<colgroup>
-				<col width = "25%">
-				<col width = "75%">
-			</colgroup>
-			<tr>
-				<th class = "text-right">제목 (*)</th>
-				<td>
-					<input type = "text" id="title"
-						class = "form-control"
-						maxlength = "50">
-				</td>
-			</tr>
-			<tr>
-				<th class = "text-right">작성자 (*)</th>
-				<td>
-					<input type = "text" id="writer"
-						class = "form-control"
-						maxlength="10">
-				</td>
-			</tr>
-			<tr>
-				<th class = "text-right">비밀번호 (*)</th>
-				<td>
-					<input type = "password" id="pwd"
-						class = "form-control"
-						maxlength = "20">
-				</td>
-			</tr>
-			<tr>
-				<th class = "text-right">내용 (*)</th>
-				<td>
-					<textarea rows = "10" cols = "30" id = "cnts"
-						class = "form-control"></textarea>
-						<script>
-						CKEDITOR.replace('cnts');
-						</script>
-				</td>
-			</tr>
-		</table>
-		<div class = "text-right">
-			<button type = "button" class = "btn btn-primary mb-5"
-				id = "btn_update"> U P D A T E </button>
+	<div class="container">
+		<%@ include file="../home_header.jsp" %>
+		<h1 class="text-muted text-center mt-3 mb-3">
+			회원게시판 수정 </h1>
+		<hr>	
+				<div>
+				<label class="ml-1 font-weight-bold "> 제목 (*)</label>
+					<input type="text" id="title" maxlength="50"
+						class="form-control mb-1 ">
+				</div>
+				
+				<div>
+				<label class="ml-1 font-weight-bold"> 작성자 (*)</label>
+					<input type="text" id="writer" maxlength="50"
+						class="form-control mb-1 ">
+				</div>
+				
+				<div>
+				<label class="ml-1 font-weight-bold"> 비밀번호 (*)</label>
+					<input type="password" id="pwd" maxlength="50"
+						class="form-control mb-1 ">
+				</div>
+				
+				<div>
+				<label class="ml-1 font-weight-bold"> 내용 (*)</label>
+					<textarea rows="10" cols="30" id="cnts"
+						class="form-control"></textarea>
+					<script>
+					CKEDITOR.replace('cnts');
+					</script>
+				</div>
+		<hr>
+		<div class="text-right">
+			<button type="button" class="btn btn-dark mb-5"
+				id="btn_back">뒤로가기</button>
+			<button type="button" class="btn btn-dark mb-5"
+				id="btn_update">수정하기</button>
 		</div>
 	</div>
-	<input type = "hidden" id = "bno" value = "${bno}">
-	<script type = "text/javascript">
+	<input type="hidden" id="bno" value="${bno}">
+	<script type="text/javascript">
 	$(document).ready(function() {
 		$("#btn_update").click(function() {
 
@@ -107,7 +128,7 @@
 			$.ajax({
 				type:"put"
 				, contentType:"application/json"
-				, url : "${root}/brd_mbr"
+				, url : "${pageContext.request.contextPath}/brdmbr"
 				, data : JSON.stringify({
 					bno : $("#bno").val()
 					, title : $("#title").val()
@@ -118,7 +139,7 @@
 				, success : function(data, status) {
 					if(data == 1) {
 						alert("게시글이 수정 되었습니다.");
-location.href = "${root}/brd_mbr/list"
+location.href="${pageContext.request.contextPath}/mbr/list"
 					} else if(data == -1) {
 						alert("비밀번호가 올바르지 않습니다.");
 					} else {
@@ -127,8 +148,12 @@ location.href = "${root}/brd_mbr/list"
 				}//function
 			});//ajax
 		});//click
+		$("#btn_back").click(function() {
+			location.href="${root}/mbr/detail?bno=827";
+		});//click
 	});//ready
 	</script>
+	<%@ include file="../home_footer.jsp" %>
 </body>
 </html>
 

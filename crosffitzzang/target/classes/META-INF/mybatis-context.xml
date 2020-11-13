@@ -7,9 +7,9 @@
 
  	<mappers>
  		<mapper resource = "META-INF/join-mapper.xml" />
+ 		<mapper resource = "META-INF/find-mapper.xml" />
 		<mapper resource = "META-INF/mm-mapper.xml" />
 		<mapper resource = "META-INF/question-mapper.xml" />
-		<mapper resource = "META-INF/qa-mapper.xml" />
 		<mapper resource = "META-INF/notice-mapper.xml" />
 		<mapper resource = "META-INF/event-mapper.xml" />
 		<mapper resource = "META-INF/member-mapper.xml" />

@@ -15,32 +15,50 @@
 </head>
 <body>
 	<div class="container">
-		<%@ include file="../home_header.jsp" %>
-	</div>
-	
-	<div class="container mt-3">
-		<table class="table table-bordered" style=" height:400px;">
-    <thead class="thead-dark">
-		<tr>
-			<th>어제 추천 일정(2020.10.28)</th>
-			<th>오늘 추천 일정(2020.10.29)</th>
-			<th>내일 추천 일정(2020.10.30)</th>
-		</tr>
-	</thead>
-	<tbody>
-		<c:forEach var="list3" items="${board_list3}">
+	<%@ include file="../home_header.jsp" %>
+	<table class="table table-bordered" style=" height:400px;">
+    	<thead class="thead-dark">
 			<tr>
-				<td>${list3.bno}</td>
-				<td>${list3.address3}</td>
-				<td>${list3.location}</td>
-				<td>${list3.tell3 }</td>
+				<th>오늘의 실시간 일정(2020.11.13)</th>
+				<th>내일의 실시간 일정(2020.11.14)</th>
 			</tr>
-		</c:forEach>
-	</tbody>
+		</thead>
+		
+		<tbody class="table table-hover tbody-gray">
+			<tr>
+				<td><h2>크로스핏 스팀펑크</h2>
+				<h5>- 18:00 ~ 19:00</h5>
+				<h5>- 박스 크로스핏</h5>
+				<h5>- 인원 : 2/10</h5>
+				<a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
+				</td>
+				<td><h2>크로스핏 슈퍼밤</h2>
+				<h5>- 17:00 ~ 18:00</h5>
+				<h5>- 박스 크로스핏</h5>
+				<h5>- 인원 : 3/5</h5>
+				<a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
+				</td>
+
+			</tr>
+			
+			<tr>
+				<td><h2>크로스핏 밤</h2>
+				<h5>- 19:00 ~ 20:00</h5>
+				<h5>- 박스 크로스핏</h5>
+				<h5>- 인원 : 1/7</h5>
+				<a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
+				</td>
+				<td><h2>맞춤 크로스핏</h2>
+				<h5>- 21:00 ~ 22:00</h5>
+				<h5>- 박스 크로스핏</h5>
+				<h5>- 인원 : 4/5</h5>
+				<a href="${root}/gym/view" class="btn btn-primary text-right">Go to Crossfit</a>
+				</td>
+			
+			</tr>
+		</tbody>
 	</table>
-
 	<%@ include file="../home_footer.jsp" %>
-
-	</div>	
+</div>		
 </body>
 </html>

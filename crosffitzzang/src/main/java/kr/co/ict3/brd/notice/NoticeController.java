@@ -2,21 +2,31 @@ package kr.co.ict3.brd.notice;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
+
 @Controller
-@RequestMapping(value = "brd_notice")
 public class NoticeController {
+
+	private static final Logger logger
+	= LoggerFactory.getLogger(NoticeController.class);
 
 	@Autowired
 	private NoticeService service;
 
-	@RequestMapping(value="/list_search", method=RequestMethod.GET)
-	public String listSearch(Model model, SearchDTO inDto, String reqPage) {
+
+	@RequestMapping(value="/board/list"
+								, method=RequestMethod.GET)
+	public String listSearch(Model model
+						, SearchDTO inDto, String reqPage) {
 		if(reqPage == null || reqPage.equals("")) {
 			reqPage = "1";
 		}
@@ -62,17 +72,27 @@ public class NoticeController {
 		return "brd_notice/list";
 	}//listSearch
 
-	@RequestMapping(value="/detail", method=RequestMethod.GET)
+
+	@RequestMapping(value="/notice/wform", method=RequestMethod.GET)
+	public String wform() {
+		return "brd_notice/wform";
+	}//wform
+
+	@RequestMapping(value="/notice/detail"
+									, method=RequestMethod.GET)
 	public String detail(String bno, Model model) {
+		
 		model.addAttribute("bno", bno);
+		
 		return "brd_notice/detail";
 	}//detail
-	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
-	public String list() {
-		return "brd_notice/list";
-	}//list
 
+	@RequestMapping(value="/notice/uform"
+									, method=RequestMethod.GET)
+	public String uform(String bno, Model model) {
+		model.addAttribute("bno", bno);
+		return "brd_notice/uform";
+	}//uform
 
 }//class
 

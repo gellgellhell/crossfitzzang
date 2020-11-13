@@ -55,8 +55,14 @@ $(document).ready(function() {
 							id="find_email" name="find_email" maxlength="20" size="55">
 					</div>
 					</div>
+			<ul>
+			
+			<li class="label mb-2">
+				<a href = "${root}/pwd_find_form"><span class = "text-dark"> 비밀번호 찾기 </span></a>
+			</li>
+			
+			</ul>
 					<hr>
-
 			
 			<div class="float-right mb-3">
 				<button type="button" id="btn_id_find"

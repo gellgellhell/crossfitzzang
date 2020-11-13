@@ -18,8 +18,16 @@ public class NoticeDAOImpl implements NoticeDAO {
 		
 		List<NoticeBoardDTO> list
 			= sqlSession.selectList("NoticeMapper.listAll");
+
 		return list;
 	}//listAll
+
+	@Override
+	public int write(NoticeBoardDTO inDto) {
+		int writeCnt
+			= sqlSession.insert("NoticeMapper.write", inDto);
+		return writeCnt;
+	}//write
 
 	@Override
 	public NoticeBoardDTO detail(String bno) {
@@ -38,6 +46,27 @@ public class NoticeDAOImpl implements NoticeDAO {
 		= sqlSession.update("NoticeMapper.likeCnt", map);
 		return updateCnt;
 	}//likeCnt
+
+	@Override
+	public int delete(NoticeBoardDTO inDto) {
+		int deleteCnt
+			= sqlSession.delete("NoticeMapper.delete", inDto);
+		return deleteCnt;
+	}//delete
+
+	@Override
+	public int chkPwd(NoticeBoardDTO inDto) {
+		int pwdCnt
+			= sqlSession.selectOne("NoticeMapper.chkPwd", inDto);
+		return pwdCnt;
+	}
+
+	@Override
+	public int update(NoticeBoardDTO inDto) {
+		int updateCnt
+			= sqlSession.update("NoticeMapper.update", inDto);
+		return updateCnt;
+	}//update
 
 	@Override
 	public int insHanjul(ReplyDTO inDto) {
@@ -67,6 +96,11 @@ public class NoticeDAOImpl implements NoticeDAO {
 		= sqlSession.selectOne("NoticeMapper.totlistCnt", inDto);
 		return totlistCnt;
 	}//totlistCnt
+
+	@Override
+	public void updateFilePath(NoticeBoardDTO inDto) {
+		sqlSession.update("NoticeMapper.updateFilePath", inDto);
+	}//updateFilePath
 
 }//class
 

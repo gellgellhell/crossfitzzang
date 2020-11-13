@@ -29,7 +29,7 @@ $(document).ready(function() {
 				<br>
 	
 	<div class="container border border-muted rounded mt-2 ml-1"
-			style="width: 100%; height: 400px; overflow: auto">
+			style="width: 100%; height: 470px; overflow: auto">
 			
 				제 1 조 (목적)
 				
@@ -185,6 +185,7 @@ $(document).ready(function() {
 
 				</div>
 			<br><br>
+				<hr>
 			<div class="float-right mb-3">
 				<button type="button" id="btn_back"
 						class="btn btn-dark text-white">돌아가기</button>

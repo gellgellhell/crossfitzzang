@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>자유게시판</title>
+<title>회원게시판상세</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -18,16 +18,15 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$.get(
-			"${root}/brd_mbr/detail/${bno}"
+			"${root}/brdmbr/detail/${bno}"
 			, {}
 			, function(data, status) {
-				//alert(data); alert(status);
 				$("#bno").val(data.bno);
 				$("#td_title").text(data.title);
 				$("#td_writer").text(data.writer);
 				$("#td_like_cnt").text(data.like_cnt);
 				$("#td_unlike_cnt").text(data.unlike_cnt);
-				$("#td_cnts").text(data.cnts);
+				$("#td_cnts").html(data.cnts);
 				viewHanjul();
 			}//function
 		);//get
@@ -39,7 +38,7 @@
 				whoClick = "heart";
 			}
 			$.ajax({
-				url : "${root}/brd_mbr/${bno}/"+whoClick
+				url : "${root}/brdmbr/${bno}/"+whoClick
 				, type : "put"
 				, success : function(data, status) {
 					if(data > 0) {
@@ -74,16 +73,15 @@
 			$.ajax({
 				type : "delete"
 				, contentType : "application/json"
-				, url : "${root}/brd_mbr"
+				, url : "${root}/brdmbr"
 				, data : JSON.stringify({
 							bno : $("#bno").val()
 							, pwd : $("#pwd").val()
 				})
 				, success : function(data, status) {
-					//alert(data);
 					if(data == 1) {
 						alert("게시글이 삭제 되었습니다.");
-location.href="${root}/brd_mbr/list";
+location.href="${root}/mbr/list";
 					} else if(data == -1) {
 						alert("비밀번호가 올바르지 않습니다.");
 					} else {
@@ -95,62 +93,73 @@ location.href="${root}/brd_mbr/list";
 
 		$("#btn_wform").click(function() {
 location.assign(
-	"${rood}/brd_mbr/uform?bno="
+	"${root}/mbr/uform?bno="
 		+ $("#bno").val()
 );//assign
 		});//click
-
+		$("#btn_back").click(function() {
+			location.href="${root}/mbr/list";
+		});//click
 	});//ready
 	</script>
-	<div class = "container">
-		<%@ include file = "../home_header.jsp" %>
-			<h1 class = "text-muted text-center mt-3 mb-3">
-				공지게시판 상세보기	</h1>
-		<div class = "form-inline mb-3 float-right">
-		<input type = "hidden" id = "bno">
-			<input type="text" id = "pwd"
-				class = "form-control mr-1"
-				placeholder = "input password for delete">
-			<button type = "button" id = "btn_delete"
-				class = "btn btn-danger mr-1">
-				D E L E T E </button>
-			<button type = "button" id = "btn_wform"
-				class = "btn btn-primary">
-				U P D A T E </button>
+	<div class="container">
+		<%@ include file="../home_header.jsp" %>
+		<br>
+		<h1 class="text-muted text-center mt-3 mb-3">
+			회원게시판 상세보기	</h1>
+			<br>
+		<div class="form-inline mb-4 float-right">
+			<input type="hidden" id="bno">
+			<input type="text" id="pwd"
+				class="form-control mr-1"
+				placeholder="비밀번호를 입력하세요.">
+			<button type="button" id="btn_delete"
+				class="btn btn-danger mr-1"> 글 삭제 </button>
+			<button type="button" id="btn_wform"
+				class="btn btn-dark"> 글 수정 </button>
 		</div>
-		<table class = "table table-hover mb-5">
+		<br>
+		<table class="table table-hover mb-5">
 			<colgroup>
-				<col width = "25%">
-				<col width = "75%">
+				<col width="25%">
+				<col width="75%">
 			</colgroup>
 			<tr>
-				<th class = "text-right">제목</th>
-				<td id = "td_title"></td>
+				<th class="text-right">제목</th>
+				<td id="td_title"></td>
 			</tr>
 			<tr>
-				<th class = "text-right">작성자</th>
-				<td id = "td_writer"></td>
+				<th class="text-right">작성자</th>
+				<td id="td_writer"></td>
 			</tr>
 			<tr>
-				<th class = "text-right">좋아요 <i class = "fa fa-heart"></i></th>
-				<td id = "td_like_cnt"></td>
+				<th class="text-right">좋아요 <i class="fa fa-heart"></i></th>
+				<td id="td_like_cnt"></td>
 			</tr>
 			<tr>
-				<th class = "text-right">싫어요 <i class = "fa fa-heartbeat"></i></th>
-				<td id = "td_unlike_cnt"></td>
+				<th class="text-right">싫어요 <i class="fa fa-heartbeat"></i></th>
+				<td id="td_unlike_cnt"></td>
 			</tr>
 			<tr>
-				<th class = "text-right">내용</th>
-				<td id = "td_cnts"></td>
+				<th class="text-right">내용</th>
+				<td id="td_cnts"></td>
 			</tr>
+			
 		</table>
+		<br>
+		<br>
+		<hr>
+		<div class="text-right">
+					<button type="button" id="btn_back"
+				class="btn btn-dark">목록가기</button>
+		</div>
 		<!-- 한줄 댓글 달기 start -->
-		<table class = "table table-hover mt-5 mb-5">
+		<table class="table table-hover mt-5 mb-5">
 			<colgroup>
-				<col width = "20%">
-				<col width = "50%">
-				<col width = "15%">
-				<col width = "15%">
+				<col width="20%">
+				<col width="50%">
+				<col width="15%">
+				<col width="15%">
 			</colgroup>
 			<thead>
 				<tr>
@@ -163,36 +172,39 @@ location.assign(
 			<tbody>
 				<tr>
 					<td>
-						<input class = "form-control"
-								maxlength = "20"
-								id = "writerTxt" type = "text">
+						<input class="form-control"
+								maxlength="20"
+								id="writerTxt" type="text">
 					</td>
 					<td>
-						<input class = "form-control"
-								maxlength = "100"
-								id = "cntsTxt" type = "text">
+						<input class="form-control"
+								maxlength="100"
+								id="cntsTxt" type="text">
 					</td>
 					<td>
-						<input class = "form-control"
-								maxlength = "20"
-								id = "pwdTxt" type = "text">
+						<input class="form-control"
+								maxlength="20"
+								id="pwdTxt" type="text">
 					</td>
 					<td>
-						<button type = "button" id = "btn_hanjul"
-								class = "btn btn-primary">
-								댓 글 달 기
+					<div class="text-right">
+						<button type="button" id="btn_hanjul"
+								class="btn btn-dark">
+								댓글쓰기
 						</button>
+						</div>
 					</td>
 				</tr>
 			</tbody>
-			<tfoot id = "reply_area">
+			<tfoot id="reply_area">
 			</tfoot>
 		</table>
-		<script type = "text/javascript">
+		<script type="text/javascript">
 		$(document).ready(function() {
 			$("#btn_hanjul").click(function() {
+				//writer cnts pwd 공백 check
 				$.post(
-					"${root}/brd_mbr/insHanjul"
+					"${root}/brdmbr/insHanjul"
 					, {
 						bno : $("#bno").val()
 						, writer : $("#writerTxt").val()
@@ -219,7 +231,7 @@ location.assign(
 	<script type="text/javascript">
 	function viewHanjul() {
 		$.get(
-			"${root}/brd_mbr/viewHanjul"
+			"${root}/brdmbr/viewHanjul"
 			, { bno : $("#bno").val() }
 			, function(data, status) {
 				if(status == "success") {
@@ -243,5 +255,18 @@ location.assign(
 	</script>
 	<!-- 한줄 댓글 보기 end -->
 	</div>
+	<%@ include file="../home_footer.jsp" %>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

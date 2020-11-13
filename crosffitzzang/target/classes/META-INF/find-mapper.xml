@@ -8,13 +8,13 @@
 	<select id="idFind"
 			parameterType="kr.co.ict3.join.MbrDTO"
 			resultType="java.lang.String">
-		select mbr_userid from mbr where mbr_name = #{mbr_name} and mbr_email = #{mbr_email}
+		select id from mbr where name = #{name} and email = #{email}
 	</select>
 
 	<select id="pwdFind"
 			parameterType="kr.co.ict3.join.MbrDTO"
 			resultType="java.lang.String">
-		select mbr_pwd from mbr where mbr_userid = #{mbr_userid} and mbr_name = #{mbr_name} and mbr_email = #{mbr_email} 
+		select pwd from mbr where id = #{id} and name = #{name} and email = #{email} 
 	</select>
 	
 </mapper>

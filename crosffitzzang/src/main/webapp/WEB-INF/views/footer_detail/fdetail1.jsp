@@ -28,7 +28,7 @@ $(document).ready(function() {
 				<hr>
 				<br>
 				<div class="clearfix">
-				<section class="col-11 float-right bg-white font-weight-bold nav-link mb-5 mt-3" style="height: 580px">
+				<section class="col-11 float-right bg-white font-weight-bold nav-link mb-5 mt-3" style="height: 560px">
 				<p> 여러분을 환영합니다.</p>
 				<p>	다양한 미치다 서비스를 즐겨보세요. </p>
 				<p>	회원으로 가입하시면 미치다 서비스를 보다 편리하게 이용할 수 있습니다. </p>

@@ -13,6 +13,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+<body>
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#btn_back").click(function() {
@@ -22,34 +23,34 @@ $(document).ready(function() {
 </script>
 	<div class="container">
 	<%@ include file="../home_header.jsp" %>
-				<h1 class="text-center text-muted mt-4">자주 묻는 질문</h1>
+				<h1 class="text-center text-muted mt-4">자주 묻는 질문 FAQ</h1>
 		<hr>
 		<div class="clearfix">
 			<!-- section start -->
-		<section class="col-11 float-right bg-white font-weight-bold nav-link mb-5 mt-3" style="height: 400px">
+		<section class="col-10 float-right bg-white font-weight-bold nav-link mb-5 mt-3" style="height: 340px">
 		<ul>
 			<li class="label mt-3 mb-4">
-				<a href = "${root}/brd_question/qdetail1"><span class = "text-muted">Q. 미치다에 대해서</span></a>
+				<a href = "${root}/brd_question/qdetail1"><span class = "text-muted" style="font-size: 120%">Q. 미치다에 대해서</span></a>
 			</li>
 			
 			<li class="label mt-3 mb-4">
-				<a href = "${root}/purchase/bag"><span class = "text-muted">Q. 회원권에 대해서</span></a>
+				<a href = "${root}/brd_question/qdetail2"><span class = "text-muted" style="font-size: 120%">Q. 회원권에 대해서</span></a>
 			</li>
 			
 			<li class="label mt-3 mb-4">
-				<a href = "${root}"><span class ="text-muted">Q. 운동시설에 대해서</span></a>
+				<a href = "${root}/brd_question/qdetail3"><span class ="text-muted" style="font-size: 120%">Q. 운동시설에 대해서</span></a>
 			</li>
 			
 			<li class="label mt-3 mb-4">
-				<a href = "${root}"><span class ="text-muted">Q. 트레이너의 대해서</span></a>
+				<a href = "${root}/brd_question/qdetail4"><span class ="text-muted" style="font-size: 120%">Q. 트레이너의 대해서</span></a>
 			</li>
 			
 			<li class="label mt-3 mb-4">
-				<a href = "${root}"><span class ="text-muted">Q. 결제/환불에 대해서</span></a>
+				<a href = "${root}/brd_question/qdetail5"><span class ="text-muted" style="font-size: 120%">Q. 결제/환불에 대해서</span></a>
 			</li>
 			
 			<li class="label mt-4 mb-3">
-				<a href = "${root}"><span class ="text-muted">Q. 사이트 이용 회원에 대해서</span></a>
+				<a href = "${root}/brd_question/qdetail6"><span class ="text-muted" style="font-size: 120%">Q. 사이트 이용 회원에 대해서</span></a>
 			</li>
 			
 		</ul>

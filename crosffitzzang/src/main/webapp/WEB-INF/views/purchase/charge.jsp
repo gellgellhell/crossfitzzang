@@ -17,15 +17,6 @@
 <script src="${root}/resources/jsfile/addr.js"></script>>
 </head>
 <body data-spy="scroll" data-target="#div1" data-offset="50">
-
-<script type="text/javascript">
-$(documnet).ready(function() {
-	$("#btn_gume").click(function() {
-		return "${root}/purchase/charge";
-	});
-});
-</script>
-
 <div class="container" id="div1">
 	<%@ include file="../home_header.jsp" %>	
   <div class="row mt-3">
@@ -44,7 +35,7 @@ $(documnet).ready(function() {
 					<div class="form-inline">
 						<input type="checkbox" class="form-control mr-1 text-left"
 							id="check1" name="check1">
-						<img src="${root}/resources/images/gym_newgen_01.jpg" width="150px">
+						<img src="${root}/resources/images/sinbal.jpg" width="150px">
 					</div>
 				</td>
 				<td class="justify-content-center">
@@ -61,7 +52,7 @@ $(documnet).ready(function() {
 					<span class="value"> </span><span class="unit">원</span>	
 				</td>
 				<td class="float-right">
-					<button type="button" class="btn btn-primary" id="btn_gume" >구매</button>
+					<button type="button" class="btn btn-primary" onclick="" >구매</button>
 					<button type="button" class="btn btn-primary btn-delete" onclick="">삭제</button>
 				</td>
 			</tr>

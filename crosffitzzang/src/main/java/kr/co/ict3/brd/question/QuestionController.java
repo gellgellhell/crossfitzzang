@@ -15,6 +15,16 @@ public class QuestionController {
 	@Autowired
 	private QuestionService service;
 
+	@RequestMapping(value="/list_rest2", method=RequestMethod.GET)
+	public String listRest2() {
+		return "brd_question/list_rest2";
+	}//listRest2
+
+	@RequestMapping(value="/list_rest", method=RequestMethod.GET)
+	public String listRest() {
+		return "brd_question/list_rest";
+	}//listRest
+
 	@RequestMapping(value="/list_search", method=RequestMethod.GET)
 	public String listSearch(Model model, SearchDTO inDto, String reqPage) {
 		if(reqPage == null || reqPage.equals("")) {
@@ -59,7 +69,7 @@ public class QuestionController {
 		model.addAttribute("search_dto", inDto);
 		model.addAttribute("board_list", list);
 
-		return "brd_question/list";
+		return "brd_question/list_search";
 	}//listSearch
 
 	@RequestMapping(value="/detail", method=RequestMethod.GET)
@@ -75,11 +85,49 @@ public class QuestionController {
 
 
 	@RequestMapping(value = "/qdetail1", method = RequestMethod.GET)
-	public String fdtail1() {
+	public String qdtail1() {
 		
 		return "/brd_question/qdetail1";
 		
 	}//qdtail1
+	
+	@RequestMapping(value = "/qdetail2", method = RequestMethod.GET)
+	public String qdtail2() {
+		
+		return "/brd_question/qdetail2";
+		
+	}//qdtail2
+	
+	@RequestMapping(value = "/qdetail3", method = RequestMethod.GET)
+	public String qdtail3() {
+		
+		return "/brd_question/qdetail3";
+		
+	}//qdtail3
+	
+	@RequestMapping(value = "/qdetail4", method = RequestMethod.GET)
+	public String qdtail4() {
+		
+		return "/brd_question/qdetail4";
+		
+	}//qdtail4
+	
+	@RequestMapping(value = "/qdetail5", method = RequestMethod.GET)
+	public String qdtail5() {
+		
+		return "/brd_question/qdetail5";
+		
+	}//qdtail5
+	
+	@RequestMapping(value = "/qdetail6", method = RequestMethod.GET)
+	public String qdtail6() {
+		
+		return "/brd_question/qdetail6";
+		
+	}//qdtail6
+
+
+
 
 }//class
 

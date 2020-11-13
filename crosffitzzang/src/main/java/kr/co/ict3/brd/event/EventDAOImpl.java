@@ -23,6 +23,13 @@ public class EventDAOImpl implements EventDAO {
 	}//listAll
 
 	@Override
+	public int write(EventBoardDTO inDto) {
+		int writeCnt
+			= sqlSession.insert("EventMapper.write", inDto);
+		return writeCnt;
+	}//write
+
+	@Override
 	public EventBoardDTO detail(String bno) {
 		EventBoardDTO dto
 		= sqlSession.selectOne("EventMapper.detail", bno);
@@ -39,6 +46,27 @@ public class EventDAOImpl implements EventDAO {
 		= sqlSession.update("EventMapper.likeCnt", map);
 		return updateCnt;
 	}//likeCnt
+
+	@Override
+	public int delete(EventBoardDTO inDto) {
+		int deleteCnt
+			= sqlSession.delete("EventMapper.delete", inDto);
+		return deleteCnt;
+	}//delete
+
+	@Override
+	public int chkPwd(EventBoardDTO inDto) {
+		int pwdCnt
+			= sqlSession.selectOne("EventMapper.chkPwd", inDto);
+		return pwdCnt;
+	}
+
+	@Override
+	public int update(EventBoardDTO inDto) {
+		int updateCnt
+			= sqlSession.update("EventMapper.update", inDto);
+		return updateCnt;
+	}//update
 
 	@Override
 	public int insHanjul(ReplyDTO inDto) {
@@ -68,6 +96,11 @@ public class EventDAOImpl implements EventDAO {
 		= sqlSession.selectOne("EventMapper.totlistCnt", inDto);
 		return totlistCnt;
 	}//totlistCnt
+
+	@Override
+	public void updateFilePath(EventBoardDTO inDto) {
+		sqlSession.update("EventMapper.updateFilePath", inDto);
+	}//updateFilePath
 
 }//class
 

@@ -68,6 +68,34 @@ public class MMDAOImpl implements MMDAO {
 		return totlistCnt;
 	}//totlistCnt
 
+	@Override
+	public int chkPwd(MMDTO inDto) {
+		int pwdCnt
+		= sqlSession.selectOne("MmMapper.chkPwd", inDto);
+		return pwdCnt;
+	}//chkPwd
+
+	@Override
+	public int update(MMDTO inDto) {
+		int updateCnt
+		= sqlSession.update("MmMapper.update", inDto);
+		return updateCnt;
+	}//update
+
+	@Override
+	public int write(MMDTO inDto) {
+		
+		int writeCnt = sqlSession.insert("MmMapper.write", inDto);
+		return writeCnt;
+		
+	}//write
+
+	@Override
+	public int delete(MMDTO inDto) {
+		int deleteCnt = sqlSession.delete("MmMapper.delete", inDto);
+		return deleteCnt;
+	}//delete
+
 }//class
 
 

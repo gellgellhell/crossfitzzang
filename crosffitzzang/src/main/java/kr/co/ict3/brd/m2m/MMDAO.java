@@ -18,6 +18,14 @@ public interface MMDAO {
 
 	public int totlistCnt(SearchDTO inDto);
 
+	public int chkPwd(MMDTO inDto);
+
+	public int update(MMDTO inDto);
+
+	public int write(MMDTO inDto);
+
+	public int delete(MMDTO inDto);
+
 }//class
 
 

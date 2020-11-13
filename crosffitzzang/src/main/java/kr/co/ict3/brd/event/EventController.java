@@ -2,21 +2,31 @@ package kr.co.ict3.brd.event;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
+
 @Controller
-@RequestMapping(value = "/brd_event")
 public class EventController {
+
+	private static final Logger logger
+	= LoggerFactory.getLogger(EventController.class);
 
 	@Autowired
 	private EventService service;
 
-	@RequestMapping(value="/list_search", method=RequestMethod.GET)
-	public String listSearch(Model model, SearchDTO inDto, String reqPage) {
+
+	@RequestMapping(value="/event/list"
+								, method=RequestMethod.GET)
+	public String listSearch(Model model
+						, SearchDTO inDto, String reqPage) {
 		if(reqPage == null || reqPage.equals("")) {
 			reqPage = "1";
 		}
@@ -62,17 +72,27 @@ public class EventController {
 		return "brd_event/list";
 	}//listSearch
 
-	@RequestMapping(value="/detail", method=RequestMethod.GET)
+
+	@RequestMapping(value="/event/wform", method=RequestMethod.GET)
+	public String wform() {
+		return "brd_event/wform";
+	}//wform
+
+	@RequestMapping(value="/event/detail"
+									, method=RequestMethod.GET)
 	public String detail(String bno, Model model) {
+		
 		model.addAttribute("bno", bno);
+		
 		return "brd_event/detail";
 	}//detail
-	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
-	public String list() {
-		return "brd_event/list";
-	}//list
 
+	@RequestMapping(value="/event/uform"
+									, method=RequestMethod.GET)
+	public String uform(String bno, Model model) {
+		model.addAttribute("bno", bno);
+		return "brd_event/uform";
+	}//uform
 
 }//class
 

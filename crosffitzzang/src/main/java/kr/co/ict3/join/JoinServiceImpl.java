@@ -19,16 +19,16 @@ public class JoinServiceImpl implements JoinService {
 	@Override
 	@Transactional
 	public int formSubmit(MbrDTO inDto) {
-		int insertCnt = dao.formSubmit(inDto);//�씪諛섑쉶�썝�엯�젰.
+		int insertCnt = dao.formSubmit(inDto);//일반회원입력.
 //		if(inDto.getBiz_yn().equals("true")) {
-//			insertCnt = dao.insertBizMember(inDto);//�궗�뾽�옄�쉶�썝�엯�젰.
+//			insertCnt = dao.insertBizMember(inDto);//사업자회원입력.
 //		}
 		return insertCnt;
 	}//formSubmit
 
 	@Override
 	public int login(MbrDTO inDto) {
-		int idYN = dao.idCheck(inDto.getMbr_id());
+		int idYN = dao.idCheck(inDto.getId());
 		if(idYN != 1) {
 			return -1;
 		}

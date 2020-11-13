@@ -8,37 +8,38 @@
 	<select id="idCheck"
 			parameterType="java.lang.String"
 			resultType="int">
-		select count(mbr_userid) cnt
+		select count(id) cnt
 		from mbr
-		where mbr_userid = #{mbr_userid}
+		where id = #{id}
 	</select>
 
 	<insert id="formSubmit"
 			parameterType="kr.co.ict3.join.MbrDTO">
-		INSERT INTO mbr (mbr_userid, mbr_pwd, mbr_email, mbr_name
-						, mbr_tel, mbr_zipcode, mbr_addr1, mbr_addr2, mbr_join_date)
-		VALUES (#{mbr_userid}, #{mbr_pwd}, #{mbr_email}, #{mbr_name}
-				, #{mbr_tel}, #{mbr_zipcode}, #{mbr_addr1}, #{mbr_addr2}, now())
+		INSERT INTO mbr (id, pwd, tel, email
+						, zone_code, addr1, addr2, join_date, name)
+		VALUES (#{id}, #{pwd}, #{tel}, #{email}
+				, #{zone_code}, #{addr1}, #{addr2}, now(), #{name})
 		<selectKey resultType="java.lang.String"
-					keyProperty="mbr_id" order="AFTER">
-			select LAST_INSERT_ID() mbr_id
+					keyProperty="mno" order="AFTER">
+			select LAST_INSERT_ID() mno
 		</selectKey>
 	</insert>
 
 	<select id="login"
 			parameterType="kr.co.ict3.join.MbrDTO"
 			resultType="int">
-		SELECT mbr_id
+		SELECT mno
 		FROM mbr
-		WHERE mbr_userid = #{mbr_userid}
-		AND mbr_pwd = #{mbr_pwd}
+		WHERE id = #{id}
+		AND pwd = #{pwd}
 	</select>
-	<update id = "updatembrinfo">
+	<update id = "updatembrinfo"
+		parameterType="kr.co.ict3.join.MbrDTO">
 		UPDATE mbr SET
-		mbr_pwd = #{mbr_pwd}, mbr_tel = #{mbr_tel}, mbr_email = #{mbr_email}, mbr_name = #{mbr_name}
-		, mbr_tel = #{mbr_tel}, mbr_zipcode = #{mbr_zipcode}, mbr_addr1 = #{mbr_addr1}, mbr_addr2 = #{mbr_addr2}
-		WHERE mbr_userid = #{mbr_userid} 
-		AND mbr_pwd = #{mbr_pwd}
+		pwd = #{pwd}, tel = #{tel}, email = #{email}
+		, zone_code = #{zone_code}, addr1 = #{addr1}, addr2 = #{addr2}, name = #{name} 
+		WHERE id = #{id} 
+		AND pwd = #{pwd}
 	
 	</update>
 
@@ -47,11 +48,20 @@
 	<select id="pwdCheck"
 			parameterType="kr.co.ict3.join.MbrDTO"
 			resultType="int">
-		SELECT count(mbr_id) cnt
+		SELECT count(mno) cnt
 		FROM mbr
-		WHERE mbr_userid = #{mbr_userid}
-		AND mbr_pwd = #{mbr_pwd}
+		WHERE id = #{id}
+		AND pwd = #{pwd}
 	</select>
+
+	<insert id="insertBizMember"
+			parameterType="kr.co.ict3.join.MbrDTO">
+		insert into mbr_biz (mno, biz_reg_no
+							, biz_place_nm, biz_boss_nm)
+		values (#{mno}, #{biz_reg_no}
+				, #{biz_place_nm}, #{biz_boss_nm});
+	</insert>
+
 	
 </mapper>
 

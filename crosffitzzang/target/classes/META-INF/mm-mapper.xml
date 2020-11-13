@@ -9,7 +9,7 @@
 			parameterType="kr.co.ict3.brd.m2m.SearchDTO"
 			resultType="int">
 		SELECT COUNT(*)
-		FROM board_m2m
+		FROM free_board
 		<if test="search_option != null
 					and search_option != ''
 					and search_word != null
@@ -31,7 +31,7 @@
 			parameterType="kr.co.ict3.brd.m2m.SearchDTO"
 			resultType="kr.co.ict3.brd.m2m.MMDTO">
 		SELECT bno, title, writer, view_cnt, write_date
-		FROM board_m2m
+		FROM free_board
 		<if test="search_option != null
 					and search_option != ''
 					and search_word != null
@@ -54,21 +54,33 @@
 	<select id="listAll"
 			resultType="kr.co.ict3.brd.m2m.MMDTO">
 		SELECT bno, title, writer, view_cnt, write_date
-		FROM board_m2m
+		FROM free_board
+		ORDER BY bno DESC
 	</select>
+
+	<insert id="write"
+			parameterType="kr.co.ict3.brd.m2m.MMDTO">
+		insert into free_board
+						(title, writer, pwd, cnts, write_date)
+		values (#{title}, #{writer}, #{pwd}, #{cnts}, now())
+		<selectKey keyProperty="bno" order="AFTER"
+					resultType="java.lang.String">
+			select LAST_INSERT_ID() bno
+		</selectKey>
+	</insert>
 
 	<select id="detail"
 			parameterType="java.lang.String"
 			resultType="kr.co.ict3.brd.m2m.MMDTO">
 		SELECT bno, title, writer, cnts
 			, view_cnt, like_cnt, unlike_cnt, write_date
-		FROM board_m2m
+		FROM free_board
 		WHERE bno = #{bno}
 	</select>
 
 	<update id="likeCnt"
 			parameterType="java.util.HashMap">
-		UPDATE board_m2m
+		UPDATE free_board
 		<choose>
 			<when test="heart == 'heart'">
 				SET like_cnt = like_cnt + 1
@@ -80,10 +92,35 @@
 		WHERE bno = #{bno}
 	</update>
 
-	
+	<delete id="delete"
+			parameterType="kr.co.ict3.brd.m2m.MMDTO">
+		DELETE FROM free_board
+		WHERE bno = #{bno}
+		AND pwd = #{pwd}
+	</delete>
+
+	<select id="chkPwd"
+			parameterType="kr.co.ict3.brd.m2m.MMDTO"
+			resultType="int">
+		SELECT COUNT(pwd) cnt
+		FROM free_board
+		WHERE bno = #{bno}
+		AND pwd = #{pwd}
+	</select>
+
+	<update id="update"
+			parameterType="kr.co.ict3.brd.m2m.MMDTO">
+		UPDATE free_board
+		SET title = #{title}
+			, writer = #{writer}
+			, cnts = #{cnts}
+		WHERE bno = #{bno}
+		AND pwd = #{pwd}
+	</update>
+
 	<insert id="insHanjul"
 			parameterType="kr.co.ict3.brd.m2m.ReplyDTO">
-		insert into board_m2m_reply
+		insert into free_board_reply
 				(bno, writer, cnts, pwd, write_date)
 		values (#{bno}, #{writer}
 				, #{cnts}, #{pwd}, now())	
@@ -93,9 +130,16 @@
 			parameterType="java.lang.String"
 			resultType="kr.co.ict3.brd.m2m.ReplyDTO">
 		select rno, bno, writer, cnts, write_date
-		from board_m2m_reply
+		from free_board_reply
 		where bno = #{bno}
 	</select>
+
+	<update id="updateFilePath"
+			parameterType="kr.co.ict3.brd.m2m.MMDTO">
+		UPDATE free_board
+		SET up_file_path = #{up_file_path}
+		WHERE bno = #{bno}
+	</update>
 
 </mapper>
 
